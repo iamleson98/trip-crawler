@@ -1,5 +1,11 @@
 //! Shared test helpers: client construction with mock endpoints, and
 //! canned wiremock stubs for the canonical endpoints.
+//!
+//! Some helpers may be unused in a given test binary (e.g. `stub_trip_search`
+//! in tests that only exercise the extract module). Suppress the dead_code
+//! warning to keep the public surface stable across test files.
+
+#![allow(dead_code)]
 
 use url::Url;
 use wiremock::{Mock, MockServer, ResponseTemplate};

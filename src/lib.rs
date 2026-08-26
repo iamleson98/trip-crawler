@@ -51,16 +51,19 @@ pub mod api;
 pub mod client;
 pub mod config;
 pub mod error;
+pub mod extract;
 pub mod models;
 pub mod sink;
 
 pub use client::VexereClient;
 pub use config::{ConcurrencyProfile, Config, Endpoints};
 pub use error::{Error, Result};
+pub use extract::{extract_brands, extract_fares, summarize_route, Brand, FareRow, RouteSummary};
 pub use models::{
     Area, AreaDetail, AreaDetailResponse, AreaSearchItem, AreaSearchResponse, Fare, PickupPoint,
     Route, Schedule, Trip, TripSearchResponse,
 };
+pub use sink::{CsvSink, DataSinkDir, JsonlSink, JsonlSinkDir, SinkFormat};
 
 /// Crate version (matches `env!("CARGO_PKG_VERSION")`).
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

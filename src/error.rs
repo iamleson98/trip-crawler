@@ -24,6 +24,10 @@ pub enum Error {
     #[error("json error: {0}")]
     Json(#[from] serde_json::Error),
 
+    /// CSV (de)serialization failed.
+    #[error("csv error: {0}")]
+    Csv(#[from] csv::Error),
+
     /// URL parsing/building failed.
     #[error("url error: {0}")]
     Url(#[from] url::ParseError),

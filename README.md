@@ -36,11 +36,17 @@ cargo build --release
 # one-shot trip search (page 1, pretty JSON)
 ./target/release/vexere search --from 24 --to 482 --date 2026-09-01 --pretty
 
-# 7-day trip crawl → /home/z/my-project/download/trips-out/trips.jsonl
+# 3-day trip crawl → trips + brands + fares + summaries (JSONL + CSV)
 ./target/release/vexere crawl-trips \
     --from 24 --to 482 \
-    --from-date 2026-09-01 --to-date 2026-09-07 \
+    --from-date 2026-09-01 --to-date 2026-09-03 \
     --out ./trips-out
+
+# 7-day multi-route crawl across popular routes
+./target/release/vexere crawl-all --from-date 2026-09-01 --to-date 2026-09-07 --out ./vexere-out
+
+# inspect a previously-crawled dataset (also backfills flat tables if missing)
+./target/release/vexere summary --dir ./trips-out
 
 # area autocomplete
 ./target/release/vexere areas -q "Hà Nội"
@@ -50,9 +56,6 @@ cargo build --release
 
 # bus / flight / train counts for a route + date
 ./target/release/vexere counts --kind bus --from 24 --to 482 --date 2026-09-01
-
-# full multi-route crawl across a date range → ./vexere-out/{trips,areas}.jsonl
-./target/release/vexere crawl-all --from-date 2026-09-01 --to-date 2026-09-07 --out ./vexere-out
 ```
 
 ### CLI global flags
@@ -63,6 +66,8 @@ cargo build --release
 | `--concurrency N` | (profile) | Override max in-flight requests |
 | `--jitter MS` | `0` | Per-request jitter before send |
 | `--timeout SEC` | `30` | Per-request HTTP timeout |
+| `--format` | `both` | `jsonl` / `csv` / `both` for crawl subcommands |
+| `--raw-only` | off | Skip the flat `brands` / `fares` tables; emit only `trips.jsonl` |
 | `-v` / `--verbose` | off | Log every request via `tracing` |
 
 `RUST_LOG=vexerers=trace` turns on full request logging.
@@ -72,7 +77,7 @@ cargo build --release
 ## Library usage
 
 ```rust,no_run
-use vexerers::{Config, VexereClient};
+use vexerers::{Config, VexereClient, extract_brands, extract_fares};
 
 let client = VexereClient::new(Config::default())?;
 
@@ -87,16 +92,108 @@ let all_trips: Vec<_> = client
     .search_all_pages(TripFilter::new(24, 482, "2026-09-01"))
     .await?;
 
-// area autocomplete
-let areas = client.areas().search("Hà Nội").await?;
+// derive the flat tables for ingestion
+let brands = extract_brands(&all_trips);   // dim_brands (deduped by id)
+let fares  = extract_fares(&all_trips, 24, 482, "2026-09-01"); // fact_fares
 
-// crash-safe JSONL sink
-use vexerers::sink::JsonlSinkDir;
-let sink = JsonlSinkDir::new("./out");
-sink.write_many("trips", &all_trips).await?;
+// write JSONL + CSV side-by-side to a directory
+use vexerers::{DataSinkDir, SinkFormat};
+let sink = DataSinkDir::new("./out");
+sink.write_many("trips",   SinkFormat::Jsonl, &all_trips).await?;  // raw nested
+sink.write_many("brands",  SinkFormat::Both,  &brands).await?;     // dim table
+sink.write_many("fares",   SinkFormat::Both,  &fares).await?;     // fact table
 ```
 
 ---
+
+## Data model — what you get out
+
+A single `vexere crawl-trips` run produces **four files** under `--out`, designed to map cleanly onto a star schema for SQL ingestion.
+
+| File | Format | Grain | What it is |
+|------|--------|-------|------------|
+| `trips.jsonl` | JSONL only | one row per `Trip` | The raw, full-nested VeXeRe record (with `route.schedules[]`, `company`, `pickup_points`, etc.). Source of truth — preserve for re-processing. |
+| `brands.jsonl` + `.csv` | both | one row per unique operator | `dim_brands` — deduplicated by `id`. Joins to `fares.operator_id`. |
+| `fares.jsonl` + `.csv` | both | one row per (trip, schedule) | `fact_fares` — every bookable departure with all price + seat info flattened. **The main analysis table.** |
+| `summaries.jsonl` + `.csv` | both | one row per (from, to, date) | Pre-computed per-route aggregates: `n_trips`, `n_operators`, `min/avg/median/max` price, `total_available_seats`. |
+
+### `fares` schema (the fact table)
+
+```csv
+schedule_id, trip_id, route_id, operator_id, operator_name,
+from_area_id, to_area_id, date,
+departure_time, departure_iso, arrival_iso, duration_minutes,
+vehicle_type, seat_type, total_seats, available_seats,
+original_price_vnd, discount_vnd, final_price_vnd, max_price_vnd
+```
+
+Key invariants:
+- `final_price_vnd = original_price_vnd - max(0, discount_vnd)`
+- `schedule_id` = the opaque `trip_code` token VeXeRe uses for booking (one per departure time)
+- `trip_id` is composite, e.g. `351932250_2026-09-01_23:00_24_38`
+- `duration_minutes` is derived from `departure_iso` - `arrival_iso` (skipped if either is missing)
+
+### `brands` schema (the operator dimension)
+
+```csv
+id, name, name_slug, logo, description, rating, rating_count, phone, hotline, address
+```
+
+Deduplicated by `id` across all input trips using a **merge-with-richest** strategy: if the same operator appears multiple times with different fields filled in, we keep the first non-empty value seen for each field. This handles the case where VeXeRe returns partial operator info on some trips and full info on others.
+
+### Importing into a SQL database
+
+```sql
+-- Postgres / MySQL / DuckDB
+CREATE TABLE dim_brands (
+  id BIGINT PRIMARY KEY,
+  name TEXT NOT NULL,
+  name_slug TEXT, logo TEXT, description TEXT,
+  rating DOUBLE PRECISION, rating_count INTEGER,
+  phone TEXT, hotline TEXT, address TEXT
+);
+
+CREATE TABLE fact_fares (
+  schedule_id TEXT PRIMARY KEY,
+  trip_id TEXT NOT NULL,
+  route_id BIGINT NOT NULL,
+  operator_id BIGINT NOT NULL REFERENCES dim_brands(id),
+  from_area_id BIGINT NOT NULL,
+  to_area_id BIGINT NOT NULL,
+  date DATE NOT NULL,
+  departure_time TEXT, departure_iso TIMESTAMPTZ, arrival_iso TIMESTAMPTZ,
+  duration_minutes INTEGER, vehicle_type TEXT, seat_type SMALLINT,
+  total_seats INTEGER, available_seats INTEGER,
+  original_price_vnd BIGINT, discount_vnd BIGINT,
+  final_price_vnd BIGINT, max_price_vnd BIGINT
+);
+
+-- COPY from the CSVs
+\copy dim_brands  FROM 'brands.csv'  WITH (FORMAT csv, HEADER true);
+\copy fact_fares FROM 'fares.csv'   WITH (FORMAT csv, HEADER true);
+```
+
+Or in Python:
+
+```python
+import pandas as pd
+brands = pd.read_csv('brands.csv')
+fares  = pd.read_csv('fares.csv')
+print(fares.groupby('operator_name').final_price_vnd.agg(['min','median','max']))
+```
+
+### Real-world output sizes
+
+A real 3-day crawl of Hà Nội (24) → Sa Pa (482):
+
+| File | Rows | Size |
+|------|------|------|
+| `trips.jsonl` | 968 trips | 7.6 MB |
+| `brands.csv` | 75 unique operators | 2.5 KB |
+| `fares.csv` | 968 departures | 276 KB |
+| `summaries.csv` | 3 (one per date) | 351 B |
+
+`fares.csv` is the table you'll actually analyze — every row = one bookable bus departure with full price + seat + operator info.
 
 ## Architecture
 
