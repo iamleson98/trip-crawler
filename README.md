@@ -48,6 +48,11 @@ cargo build --release
 # inspect a previously-crawled dataset (also backfills flat tables if missing)
 ./target/release/vexere summary --dir ./trips-out
 
+# OR — extract flat tables individually from trips.jsonl:
+./target/release/vexere brands --dir ./trips-out          # → brands.{jsonl,csv}
+./target/release/vexere fares  --dir ./trips-out          # → fares.{jsonl,csv}
+./target/release/vexere routes --dir ./trips-out          # → routes.{jsonl,csv} + table
+
 # area autocomplete
 ./target/release/vexere areas -q "Hà Nội"
 
@@ -66,7 +71,7 @@ cargo build --release
 | `--concurrency N` | (profile) | Override max in-flight requests |
 | `--jitter MS` | `0` | Per-request jitter before send |
 | `--timeout SEC` | `30` | Per-request HTTP timeout |
-| `--format` | `both` | `jsonl` / `csv` / `both` for crawl subcommands |
+| `--format` | `both` | `jsonl` / `csv` / `both` for crawl + extract subcommands |
 | `--raw-only` | off | Skip the flat `brands` / `fares` tables; emit only `trips.jsonl` |
 | `-v` / `--verbose` | off | Log every request via `tracing` |
 
@@ -108,14 +113,31 @@ sink.write_many("fares",   SinkFormat::Both,  &fares).await?;     // fact table
 
 ## Data model — what you get out
 
-A single `vexere crawl-trips` run produces **four files** under `--out`, designed to map cleanly onto a star schema for SQL ingestion.
+A single `vexere crawl-trips` run produces **six files** under `--out`, designed to map cleanly onto a star schema for SQL ingestion.
 
 | File | Format | Grain | What it is |
 |------|--------|-------|------------|
 | `trips.jsonl` | JSONL only | one row per `Trip` | The raw, full-nested VeXeRe record (with `route.schedules[]`, `company`, `pickup_points`, etc.). Source of truth — preserve for re-processing. |
 | `brands.jsonl` + `.csv` | both | one row per unique operator | `dim_brands` — deduplicated by `id`. Joins to `fares.operator_id`. |
 | `fares.jsonl` + `.csv` | both | one row per (trip, schedule) | `fact_fares` — every bookable departure with all price + seat info flattened. **The main analysis table.** |
-| `summaries.jsonl` + `.csv` | both | one row per (from, to, date) | Pre-computed per-route aggregates: `n_trips`, `n_operators`, `min/avg/median/max` price, `total_available_seats`. |
+| `routes.jsonl` + `.csv` | both | one row per (from, to, date) | Pre-computed per-route aggregates: `n_trips`, `n_operators`, `min/avg/median/max` price, `total_available_seats`. Derived from `id_index` parsing. |
+| `summaries.jsonl` + `.csv` | both | one row per (from, to, date) | Same shape as `routes` but stamped from the live search filter values during a crawl. |
+| `areas.jsonl` + `.csv` | both | one row per area | `dim_areas` (only produced by `crawl-all`). Joins to `fares.from_area_id` / `to_area_id`. |
+
+> **📖 Full field-by-field reference**: [`docs/SCHEMA.md`](docs/SCHEMA.md) — every column, type, nullable-ness, and invariant. Use it to write `CREATE TABLE` DDL or sanity-check a dataset.
+
+### Subcommand inventory
+
+| Subcommand | Reads | Writes | Notes |
+|---|---|---|---|
+| `search` | (live API) | stdout | One-shot single-page search. |
+| `crawl-trips` | (live API) | `trips.{jsonl}` + `brands.*` + `fares.*` + `summaries.*` | Per-route × date-range. Honors `--raw-only` to skip flat tables. |
+| `crawl-all` | (live API) | Above + `areas.*` | Seed list of 10 popular routes × date range. |
+| `summary` | `trips.jsonl` | `brands.*` + `fares.*` (if missing) | Also prints a per-route-day table. |
+| `brands` | `trips.jsonl` | `brands.*` | Granular extract; `--force` to overwrite. |
+| `fares` | `trips.jsonl` | `fares.*` | Granular extract; `--force` to overwrite. `(from, to, date)` parsed from `id_index`. |
+| `routes` | `trips.jsonl` | `routes.*` | Granular extract; also prints a per-route-day table. |
+| `areas` / `area` / `counts` / `home` | (live API) | stdout | Reference lookups. |
 
 ### `fares` schema (the fact table)
 

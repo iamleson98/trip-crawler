@@ -210,6 +210,50 @@ enum Cmd {
         #[arg(long)]
         force: bool,
     },
+
+    /// Extract the `brands` (operator dimension) table from an existing
+    /// `trips.jsonl`. Writes `brands.{jsonl,csv}` next to it.
+    ///
+    /// Useful when you've already crawled with `--raw-only` and now want
+    /// the flat operator dimension table without re-running a full
+    /// `summary`.
+    Brands {
+        /// Directory containing trips.jsonl.
+        #[arg(long, default_value = "vexere-out")]
+        dir: PathBuf,
+        /// Overwrite brands.{jsonl,csv} even if they already exist.
+        #[arg(long)]
+        force: bool,
+    },
+
+    /// Extract the `fares` (price fact) table from an existing `trips.jsonl`.
+    /// Writes `fares.{jsonl,csv}` next to it.
+    ///
+    /// One row per (trip, schedule) — every bookable departure with all
+    /// price + seat info flattened.
+    Fares {
+        /// Directory containing trips.jsonl.
+        #[arg(long, default_value = "vexere-out")]
+        dir: PathBuf,
+        /// Overwrite fares.{jsonl,csv} even if they already exist.
+        #[arg(long)]
+        force: bool,
+    },
+
+    /// Extract per-route aggregates from an existing `trips.jsonl`.
+    /// Writes `routes.{jsonl,csv}` next to it and prints a table.
+    ///
+    /// One row per (from_area_id, to_area_id, date) — grain matches the
+    /// `summaries` table from a live crawl, but derived from disk so you
+    /// can run it on data crawled with `--raw-only`.
+    Routes {
+        /// Directory containing trips.jsonl.
+        #[arg(long, default_value = "vexere-out")]
+        dir: PathBuf,
+        /// Overwrite routes.{jsonl,csv} even if they already exist.
+        #[arg(long)]
+        force: bool,
+    },
 }
 
 #[derive(Debug, Clone, Copy, clap::ValueEnum)]
@@ -365,6 +409,9 @@ async fn main() -> ExitCode {
             .await
         }
         Cmd::Summary { dir, force } => run_summary(dir, force, cli.format.to_sink_format()).await,
+        Cmd::Brands { dir, force } => run_brands(dir, force, cli.format.to_sink_format()).await,
+        Cmd::Fares { dir, force } => run_fares(dir, force, cli.format.to_sink_format()).await,
+        Cmd::Routes { dir, force } => run_routes(dir, force, cli.format.to_sink_format()).await,
     };
 
     if let Err(e) = res {
@@ -608,43 +655,9 @@ async fn write_trip_batch(
 /// flat tables from a `--raw-only` crawl after the fact.
 async fn run_summary(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Result<()> {
     let trips_path = dir.join("trips.jsonl");
-    if !trips_path.exists() {
-        anyhow::bail!(
-            "no trips.jsonl found in {}; run `vexere crawl-trips` first",
-            dir.display()
-        );
-    }
     eprintln!("==> reading {}", trips_path.display());
-
-    // Parse trips.jsonl line by line, accumulating trips + fares + brands.
-    use std::io::BufRead;
-    let f = std::fs::File::open(&trips_path).context("open trips.jsonl")?;
-    let reader = std::io::BufReader::new(f);
-    let mut all_trips: Vec<vexerers::Trip> = Vec::new();
-    let mut n_lines = 0usize;
-    let mut n_bad = 0usize;
-    for line in reader.lines() {
-        let line = line.context("read line")?;
-        if line.trim().is_empty() {
-            continue;
-        }
-        n_lines += 1;
-        match serde_json::from_str::<vexerers::Trip>(&line) {
-            Ok(t) => all_trips.push(t),
-            Err(e) => {
-                n_bad += 1;
-                if n_bad <= 5 {
-                    eprintln!("    WARN parse line {n_lines}: {e}");
-                }
-            }
-        }
-    }
-    eprintln!(
-        "    parsed {}/{} lines ({} bad)",
-        all_trips.len(),
-        n_lines,
-        n_bad
-    );
+    let all_trips = read_trips_jsonl(&trips_path)?;
+    eprintln!("    parsed {} trips", all_trips.len());
 
     // Derive brands + fares + summaries.
     let brands = vexerers::extract_brands(&all_trips);
@@ -656,35 +669,27 @@ async fn run_summary(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Re
         all_trips.len()
     );
 
-    // Print summary to stderr — group by date.
-    let mut by_date: std::collections::BTreeMap<String, Vec<vexerers::Trip>> =
-        std::collections::BTreeMap::new();
-    for t in &all_trips {
-        // Try to extract the date from the trip id_index ("..._YYYY-MM-DD_...").
-        let date = extract_date_from_id_index(&t.id_index).unwrap_or_else(|| "unknown".to_string());
-        by_date.entry(date).or_default().push(t.clone());
-    }
+    // Print summary to stdout — group by (from, to, date).
+    let groups = group_trips_by_route_key(&all_trips);
     println!(
-        "{:<12} {:>10} {:>10} {:>12} {:>12} {:>12} {:>12}",
-        "date", "n_trips", "n_brands", "min_vnd", "median_vnd", "max_vnd", "avg_vnd"
+        "{:<14} {:<6} {:>10} {:>10} {:>12} {:>12} {:>12} {:>12}",
+        "date", "route", "n_trips", "n_brands", "min_vnd", "median_vnd", "max_vnd", "avg_vnd"
     );
-    println!("{:-<90}", "");
-    for (date, ts) in by_date.iter() {
+    println!("{:-<96}", "");
+    for ((from, to, date), ts) in groups.iter() {
         let brands_for_date = vexerers::extract_brands(ts);
-        let fares_for_date = vexerers::extract_fares(ts, 0, 0, date);
-        let summary = vexerers::summarize_route(ts, 0, 0, date);
-        let n_brands = brands_for_date.len();
-        let _ = fares_for_date; // unused but kept for clarity
-        let _ = &summary;
+        let summary = vexerers::summarize_route(ts, *from, *to, date);
         let min_p = summary.min_price_vnd.unwrap_or(0);
         let max_p = summary.max_price_vnd.unwrap_or(0);
         let med_p = summary.median_price_vnd.unwrap_or(0);
         let avg_p = summary.avg_price_vnd.unwrap_or(0.0);
+        let route = format!("{from}->{to}");
         println!(
-            "{:<12} {:>10} {:>10} {:>12} {:>12} {:>12} {:>12.0}",
+            "{:<14} {:<6} {:>10} {:>10} {:>12} {:>12} {:>12} {:>12.0}",
             date,
+            route,
             ts.len(),
-            n_brands,
+            brands_for_date.len(),
             min_p,
             med_p,
             max_p,
@@ -717,19 +722,288 @@ async fn run_summary(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Re
     Ok(())
 }
 
-/// Extract the date (YYYY-MM-DD) from a trip `id_index` like
-/// "351932250_2026-09-01_23:00_24_38". Returns `None` if the format doesn't match.
-fn extract_date_from_id_index(id: &str) -> Option<String> {
-    // id_index has the shape "<route_id>_<YYYY-MM-DD>_<HH:MM>_<from>_<to>".
-    // The date is the 2nd underscore-separated segment.
+/// Extract the `brands` (operator dimension) table from `<dir>/trips.jsonl`
+/// and write `brands.{jsonl,csv}` next to it. Prints a brief summary.
+async fn run_brands(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Result<()> {
+    let trips_path = dir.join("trips.jsonl");
+    let brands_jsonl = dir.join("brands.jsonl");
+    let brands_csv = dir.join("brands.csv");
+    if !force && (brands_jsonl.exists() || brands_csv.exists()) {
+        eprintln!(
+            "==> brands table already exists in {}; pass --force to overwrite",
+            dir.display()
+        );
+        return Ok(());
+    }
+    eprintln!("==> reading {}", trips_path.display());
+    let trips = read_trips_jsonl(&trips_path)?;
+    eprintln!("    parsed {} trips", trips.len());
+
+    let brands = vexerers::extract_brands(&trips);
+    eprintln!("    derived {} unique brands", brands.len());
+    let sink = vexerers::DataSinkDir::new(&dir);
+    let written = sink.write_many("brands", fmt, &brands).await?;
+    eprintln!(
+        "==> wrote {written} brand rows to {}/brands.{{{}}}",
+        dir.display(),
+        fmt_extensions(fmt)
+    );
+    println!("brands: {written} (in {})", dir.display());
+    Ok(())
+}
+
+/// Extract the `fares` (price fact) table from `<dir>/trips.jsonl` and write
+/// `fares.{jsonl,csv}` next to it. Prints a brief summary.
+async fn run_fares(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Result<()> {
+    let trips_path = dir.join("trips.jsonl");
+    let fares_jsonl = dir.join("fares.jsonl");
+    let fares_csv = dir.join("fares.csv");
+    if !force && (fares_jsonl.exists() || fares_csv.exists()) {
+        eprintln!(
+            "==> fares table already exists in {}; pass --force to overwrite",
+            dir.display()
+        );
+        return Ok(());
+    }
+    eprintln!("==> reading {}", trips_path.display());
+    let trips = read_trips_jsonl(&trips_path)?;
+    eprintln!("    parsed {} trips", trips.len());
+
+    // For each trip, parse (from, to, date) from id_index when possible, so
+    // the emitted fares table carries the correct route + date stamps even
+    // when extracted from a raw-only crawl (where the search-filter values
+    // are no longer available). Falls back to (0, 0, "unknown") when the
+    // id_index doesn't match the expected shape.
+    let mut all_fares: Vec<vexerers::FareRow> = Vec::with_capacity(trips.len() * 2);
+    for t in &trips {
+        let (from, to, date) =
+            extract_route_key_from_id_index(&t.id_index).unwrap_or((0, 0, "unknown".to_string()));
+        let mut fares = vexerers::extract_fares(std::slice::from_ref(t), from, to, &date);
+        all_fares.append(&mut fares);
+    }
+    eprintln!(
+        "    derived {} fare rows from {} trips",
+        all_fares.len(),
+        trips.len()
+    );
+
+    let sink = vexerers::DataSinkDir::new(&dir);
+    let written = sink.write_many("fares", fmt, &all_fares).await?;
+    eprintln!(
+        "==> wrote {written} fare rows to {}/fares.{{{}}}",
+        dir.display(),
+        fmt_extensions(fmt)
+    );
+    println!("fares: {written} (in {})", dir.display());
+    Ok(())
+}
+
+/// Aggregate per-route (from, to, date) summaries from `<dir>/trips.jsonl`,
+/// write `routes.{jsonl,csv}` next to it, and print a brief table.
+///
+/// Grain matches `summaries` from a live crawl, but derived from disk so
+/// you can run it on a `--raw-only` dataset.
+async fn run_routes(dir: PathBuf, force: bool, fmt: vexerers::SinkFormat) -> Result<()> {
+    let trips_path = dir.join("trips.jsonl");
+    let routes_jsonl = dir.join("routes.jsonl");
+    let routes_csv = dir.join("routes.csv");
+    if !force && (routes_jsonl.exists() || routes_csv.exists()) {
+        eprintln!(
+            "==> routes table already exists in {}; pass --force to overwrite",
+            dir.display()
+        );
+        return Ok(());
+    }
+    eprintln!("==> reading {}", trips_path.display());
+    let trips = read_trips_jsonl(&trips_path)?;
+    eprintln!("    parsed {} trips", trips.len());
+
+    let groups = group_trips_by_route_key(&trips);
+    let summaries: Vec<vexerers::RouteSummary> = groups
+        .iter()
+        .map(|((from, to, date), ts)| vexerers::summarize_route(ts, *from, *to, date))
+        .collect();
+    eprintln!("    derived {} route-day rows", summaries.len());
+
+    // Print table to stdout.
+    println!(
+        "{:<6} {:<6} {:<12} {:>8} {:>10} {:>10} {:>12} {:>12} {:>12} {:>10}",
+        "from",
+        "to",
+        "date",
+        "n_trips",
+        "n_sched",
+        "n_brands",
+        "min_vnd",
+        "med_vnd",
+        "max_vnd",
+        "seats"
+    );
+    println!("{:-<110}", "");
+    for s in &summaries {
+        println!(
+            "{:<6} {:<6} {:<12} {:>8} {:>10} {:>10} {:>12} {:>12} {:>12} {:>10}",
+            s.from_area_id,
+            s.to_area_id,
+            s.date,
+            s.n_trips,
+            s.n_schedules,
+            s.n_operators,
+            s.min_price_vnd.unwrap_or(0),
+            s.median_price_vnd.unwrap_or(0),
+            s.max_price_vnd.unwrap_or(0),
+            s.total_available_seats,
+        );
+    }
+
+    let sink = vexerers::DataSinkDir::new(&dir);
+    let written = sink.write_many("routes", fmt, &summaries).await?;
+    eprintln!(
+        "==> wrote {written} route rows to {}/routes.{{{}}}",
+        dir.display(),
+        fmt_extensions(fmt)
+    );
+    println!("routes: {written} (in {})", dir.display());
+    Ok(())
+}
+
+// ---------------------------------------------------------------------------
+// Shared helpers (used by `summary`, `brands`, `fares`, `routes`).
+// ---------------------------------------------------------------------------
+
+/// Read a `trips.jsonl` file into a `Vec<Trip>`. Lines that fail to parse
+/// are counted as bad (up to 5 warnings printed), then skipped — does not
+/// abort the whole read.
+fn read_trips_jsonl(path: &std::path::Path) -> Result<Vec<vexerers::Trip>> {
+    use std::io::BufRead;
+    if !path.exists() {
+        anyhow::bail!(
+            "no trips.jsonl found at {}; run `vexere crawl-trips` first",
+            path.display()
+        );
+    }
+    let f = std::fs::File::open(path).with_context(|| format!("open {}", path.display()))?;
+    let reader = std::io::BufReader::new(f);
+    let mut trips: Vec<vexerers::Trip> = Vec::new();
+    let mut n_lines = 0usize;
+    let mut n_bad = 0usize;
+    for line in reader.lines() {
+        let line = line.context("read line")?;
+        if line.trim().is_empty() {
+            continue;
+        }
+        n_lines += 1;
+        match serde_json::from_str::<vexerers::Trip>(&line) {
+            Ok(t) => trips.push(t),
+            Err(e) => {
+                n_bad += 1;
+                if n_bad <= 5 {
+                    eprintln!("    WARN parse line {n_lines}: {e}");
+                }
+            }
+        }
+    }
+    eprintln!(
+        "    parsed {}/{} lines ({} bad)",
+        trips.len(),
+        n_lines,
+        n_bad
+    );
+    Ok(trips)
+}
+
+/// Group a flat trip list by `(from_area_id, to_area_id, date)` parsed from
+/// each trip's `id_index`. Trips whose `id_index` doesn't match the
+/// expected shape fall back to `(0, 0, "unknown")` — they're still
+/// grouped, just under the catch-all key.
+fn group_trips_by_route_key(
+    trips: &[vexerers::Trip],
+) -> std::collections::BTreeMap<(u64, u64, String), Vec<vexerers::Trip>> {
+    let mut out: std::collections::BTreeMap<(u64, u64, String), Vec<vexerers::Trip>> =
+        std::collections::BTreeMap::new();
+    for t in trips {
+        let key =
+            extract_route_key_from_id_index(&t.id_index).unwrap_or((0, 0, "unknown".to_string()));
+        out.entry(key).or_default().push(t.clone());
+    }
+    out
+}
+
+/// Parse a trip `id_index` like `"351932250_2026-09-01_23:00_24_38"` into
+/// `(from_area_id, to_area_id, date)`.
+///
+/// The `id_index` shape is `"<route_id>_<YYYY-MM-DD>_<HH:MM>_<from>_<to>"`.
+/// Returns `None` if the string doesn't have at least 5 underscore-separated
+/// segments, or if the last two don't parse as `u64`.
+fn extract_route_key_from_id_index(id: &str) -> Option<(u64, u64, String)> {
     let parts: Vec<&str> = id.split('_').collect();
-    if parts.len() < 2 {
+    if parts.len() < 5 {
         return None;
     }
-    let candidate = parts[1];
-    if candidate.len() == 10 && candidate.as_bytes()[4] == b'-' && candidate.as_bytes()[7] == b'-' {
-        Some(candidate.to_string())
-    } else {
-        None
+    let date_candidate = parts[1];
+    let is_date = date_candidate.len() == 10
+        && date_candidate.as_bytes()[4] == b'-'
+        && date_candidate.as_bytes()[7] == b'-';
+    if !is_date {
+        return None;
+    }
+    // The last two segments may have leading zeros; u64::parse handles that.
+    let from: u64 = parts[parts.len() - 2].parse().ok()?;
+    let to: u64 = parts[parts.len() - 1].parse().ok()?;
+    Some((from, to, date_candidate.to_string()))
+}
+
+/// Extract the date (YYYY-MM-DD) from a trip `id_index` like
+/// "351932250_2026-09-01_23:00_24_38". Returns `None` if the format doesn't match.
+#[allow(dead_code)]
+fn extract_date_from_id_index(id: &str) -> Option<String> {
+    extract_route_key_from_id_index(id).map(|(_, _, d)| d)
+}
+
+/// Human-readable extension list for a `SinkFormat` (used in log lines).
+fn fmt_extensions(fmt: vexerers::SinkFormat) -> &'static str {
+    match fmt {
+        vexerers::SinkFormat::Jsonl => "jsonl",
+        vexerers::SinkFormat::Csv => "csv",
+        vexerers::SinkFormat::Both => "jsonl,csv",
+    }
+}
+
+#[cfg(test)]
+mod cli_tests {
+    use super::*;
+
+    #[test]
+    fn parses_route_key_from_canonical_id_index() {
+        let (from, to, date) =
+            extract_route_key_from_id_index("351932250_2026-09-01_23:00_24_38").unwrap();
+        assert_eq!(from, 24);
+        assert_eq!(to, 38);
+        assert_eq!(date, "2026-09-01");
+    }
+
+    #[test]
+    fn route_key_returns_none_for_malformed_id() {
+        assert!(extract_route_key_from_id_index("garbage").is_none());
+        assert!(extract_route_key_from_id_index("a_b_c_d").is_none()); // 4 segments
+                                                                       // 5 segments but date doesn't match shape:
+        assert!(extract_route_key_from_id_index("1_not_a_date_23:00_24_38").is_none());
+        // 5 segments but last two aren't numeric:
+        assert!(extract_route_key_from_id_index("1_2026-09-01_23:00_x_38").is_none());
+    }
+
+    #[test]
+    fn route_key_returns_none_when_last_segments_not_numeric() {
+        // 6 segments here — last is "extra_segment" which doesn't parse as u64.
+        assert!(
+            extract_route_key_from_id_index("100_2026-09-01_23:00_24_482_extra_segment").is_none()
+        );
+    }
+
+    #[test]
+    fn fmt_extensions_maps_variants() {
+        assert_eq!(fmt_extensions(vexerers::SinkFormat::Jsonl), "jsonl");
+        assert_eq!(fmt_extensions(vexerers::SinkFormat::Csv), "csv");
+        assert_eq!(fmt_extensions(vexerers::SinkFormat::Both), "jsonl,csv");
     }
 }
