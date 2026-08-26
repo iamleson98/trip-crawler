@@ -362,6 +362,26 @@ These feed the integration tests in `tests/`.
 
 ---
 
+## Python orchestration & datasets
+
+The Rust crate handles live API crawling. On top of it, a small set of
+Python scripts orchestrate **N×N crawl across all major Vietnamese
+cities** and build ready-to-use Excel workbooks.
+
+- **[`scripts/`](scripts/)** — `nxn_crawl.py` (N×N orchestrator), `build_excel.py` (flat fares workbook), `build_excel_enriched.py` (enriched workbook with full pickup/dropoff point detail). See [`scripts/README.md`](scripts/README.md) for full instructions.
+- **[`data/`](data/)** — published crawl outputs: the N×N manifest, the flat fares workbook (`vexere_nxn_trips.xlsx`, 62 sheets, 102,715 fares), the enriched workbook (`vexere_nxn_trips_enriched.xlsx`, 63 sheets, 49,648 enriched fares + 10,742 distinct pickup/dropoff points), and a single-route sample dataset for quick inspection. See [`data/README.md`](data/README.md) for coverage details.
+
+To reproduce the published datasets end-to-end (~25 min crawl + ~2 min Excel build):
+
+```bash
+cargo build --release
+python scripts/nxn_crawl.py --out /tmp/nxn_out
+python scripts/build_excel.py      --in-dir /tmp/nxn_out --manifest /tmp/nxn_out/manifest.json --out data/vexere_nxn_trips.xlsx
+python scripts/build_excel_enriched.py --in-dir /tmp/nxn_out --manifest /tmp/nxn_out/manifest.json --out data/vexere_nxn_trips_enriched.xlsx
+```
+
+---
+
 ## Development
 
 ```bash

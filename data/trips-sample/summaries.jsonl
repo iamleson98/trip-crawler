@@ -1,0 +1,3 @@
+{"from_area_id":24,"to_area_id":482,"date":"2026-09-01","n_trips":323,"n_schedules":323,"n_operators":25,"min_price_vnd":10000,"max_price_vnd":700000,"avg_price_vnd":302018.57585139317,"median_price_vnd":420000,"total_available_seats":4400}
+{"from_area_id":24,"to_area_id":482,"date":"2026-09-02","n_trips":320,"n_schedules":320,"n_operators":25,"min_price_vnd":10000,"max_price_vnd":700000,"avg_price_vnd":303787.5,"median_price_vnd":420000,"total_available_seats":4228}
+{"from_area_id":24,"to_area_id":482,"date":"2026-09-03","n_trips":325,"n_schedules":325,"n_operators":25,"min_price_vnd":10000,"max_price_vnd":700000,"avg_price_vnd":300990.76923076925,"median_price_vnd":420000,"total_available_seats":4478}
