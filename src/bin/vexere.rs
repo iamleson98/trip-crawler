@@ -18,9 +18,7 @@ use clap::{Parser, Subcommand};
 use time::Date;
 use tracing_subscriber::EnvFilter;
 
-use vexerers::{
-    api::counts::CountKind, Config, ConcurrencyProfile, VexereClient,
-};
+use vexerers::{api::counts::CountKind, ConcurrencyProfile, Config, VexereClient};
 
 #[derive(Debug, Parser)]
 #[command(
@@ -221,7 +219,8 @@ fn parse_date(s: &str) -> Result<Date> {
             time::format_description::parse_borrowed::<2>("[year]-[month]-[day]")
                 .expect("valid format string")
         });
-    let d = Date::parse(s, &*FMT).with_context(|| format!("invalid date {s:?}; expected YYYY-MM-DD"))?;
+    let d = Date::parse(s, &*FMT)
+        .with_context(|| format!("invalid date {s:?}; expected YYYY-MM-DD"))?;
     Ok(d)
 }
 
@@ -281,9 +280,18 @@ async fn main() -> ExitCode {
         } => run_crawl_trips(&client, from, to, &from_date, &to_date, out).await,
         Cmd::Areas { query, pretty } => run_areas(&client, &query, pretty).await,
         Cmd::Area { id, pretty } => run_area(&client, id, pretty).await,
-        Cmd::Counts { kind, from, to, date } => run_counts(&client, kind.into(), from, to, &date).await,
+        Cmd::Counts {
+            kind,
+            from,
+            to,
+            date,
+        } => run_counts(&client, kind.into(), from, to, &date).await,
         Cmd::Home { endpoint } => run_home(&client, endpoint.into()).await,
-        Cmd::CrawlAll { from_date, to_date, out } => run_crawl_all(&client, &from_date, &to_date, out).await,
+        Cmd::CrawlAll {
+            from_date,
+            to_date,
+            out,
+        } => run_crawl_all(&client, &from_date, &to_date, out).await,
     };
 
     if let Err(e) = res {
@@ -384,11 +392,7 @@ async fn run_counts(
     date: &str,
 ) -> Result<()> {
     let req = vexerers::api::counts::CountRequest::new(from, to, date);
-    let resp = client
-        .counts()
-        .count(kind, &req)
-        .await
-        .context("counts")?;
+    let resp = client.counts().count(kind, &req).await.context("counts")?;
     println!("{}", serde_json::to_string_pretty(&resp)?);
     Ok(())
 }
@@ -397,11 +401,7 @@ async fn run_home(
     client: &VexereClient,
     endpoint: vexerers::api::home::HomeEndpoint,
 ) -> Result<()> {
-    let html = client
-        .home()
-        .raw_html(endpoint)
-        .await
-        .context("home")?;
+    let html = client.home().raw_html(endpoint).await.context("home")?;
     println!("{html}");
     Ok(())
 }

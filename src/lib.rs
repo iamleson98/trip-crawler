@@ -22,7 +22,7 @@
 //! use vexerers::{Config, VexereClient};
 //!
 //! let cfg = Config::default();
-//! let client = VexereClient::new(cfg).await?;
+//! let client = VexereClient::new(cfg)?;
 //!
 //! let trips = client.trips().search(24, 482, "2026-08-27").await?;
 //! println!("found {} trips", trips.total);
@@ -44,7 +44,7 @@
     clippy::cast_possible_truncation,
     clippy::cast_possible_wrap,
     clippy::cast_sign_loss,
-    clippy::cast_precision_loss,
+    clippy::cast_precision_loss
 )]
 
 pub mod api;
@@ -55,9 +55,12 @@ pub mod models;
 pub mod sink;
 
 pub use client::VexereClient;
-pub use config::{Config, ConcurrencyProfile};
+pub use config::{ConcurrencyProfile, Config, Endpoints};
 pub use error::{Error, Result};
-pub use models::{Area, AreaDetail, AreaDetailResponse, AreaSearchItem, AreaSearchResponse, Fare, PickupPoint, Route, Schedule, Trip, TripSearchResponse};
+pub use models::{
+    Area, AreaDetail, AreaDetailResponse, AreaSearchItem, AreaSearchResponse, Fare, PickupPoint,
+    Route, Schedule, Trip, TripSearchResponse,
+};
 
 /// Crate version (matches `env!("CARGO_PKG_VERSION")`).
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

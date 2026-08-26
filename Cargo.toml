@@ -5,7 +5,7 @@ edition = "2021"
 rust-version = "1.75"
 description = "Reverse-engineered Rust client + crawler for the VeXeRe public bus-trip APIs (trip search, areas, schedules, counts). Anonymous-only; no booking or payment."
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/your-org/vexerers"
+repository = "https://github.com/iamleson98/trip-crawler"
 keywords = ["vexere", "vietnam", "bus", "crawler", "api-client"]
 categories = ["api-bindings", "web-programming::http-client"]
 

@@ -253,11 +253,7 @@ impl Trip {
     /// Convenience: total available seats across this trip's schedules.
     #[must_use]
     pub fn total_available_seats(&self) -> u32 {
-        self.route
-            .schedules
-            .iter()
-            .map(|s| s.available_seats)
-            .sum()
+        self.route.schedules.iter().map(|s| s.available_seats).sum()
     }
 
     /// Convenience: vehicle type label (e.g. "Limousine 24 chỗ").

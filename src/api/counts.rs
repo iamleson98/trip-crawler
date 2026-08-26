@@ -102,16 +102,19 @@ impl Counts {
 
     /// Convenience: bus trip counts.
     pub async fn bus(&self, from: u64, to: u64, date: &str) -> Result<CountResponse> {
-        self.count(CountKind::Bus, &CountRequest::new(from, to, date)).await
+        self.count(CountKind::Bus, &CountRequest::new(from, to, date))
+            .await
     }
 
     /// Convenience: flight counts.
     pub async fn flight(&self, from: u64, to: u64, date: &str) -> Result<CountResponse> {
-        self.count(CountKind::Flight, &CountRequest::new(from, to, date)).await
+        self.count(CountKind::Flight, &CountRequest::new(from, to, date))
+            .await
     }
 
     /// Convenience: train counts.
     pub async fn train(&self, from: u64, to: u64, date: &str) -> Result<CountResponse> {
-        self.count(CountKind::Train, &CountRequest::new(from, to, date)).await
+        self.count(CountKind::Train, &CountRequest::new(from, to, date))
+            .await
     }
 }

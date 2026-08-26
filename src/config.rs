@@ -18,8 +18,7 @@ pub mod concurrency_profile {
 }
 
 /// Concurrency profile (max in-flight requests + per-request jitter).
-#[derive(Clone, Copy, Debug)]
-#[derive(Default)]
+#[derive(Clone, Copy, Debug, Default)]
 pub enum ConcurrencyProfile {
     /// Polite: 8 concurrent, 200ms jitter.
     Polite,
@@ -56,7 +55,6 @@ impl ConcurrencyProfile {
         self.params().1
     }
 }
-
 
 /// All base URLs used by the `VeXeRe` microservices.
 ///

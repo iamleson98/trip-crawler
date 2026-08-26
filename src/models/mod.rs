@@ -8,6 +8,8 @@ pub mod area;
 pub mod common;
 pub mod trip;
 
-pub use area::{Area, AreaDetail, AreaDetailResponse, AreaSearchItem, AreaSearchResponse, GeoPoint, PickupPoint};
+pub use area::{
+    Area, AreaDetail, AreaDetailResponse, AreaSearchItem, AreaSearchResponse, GeoPoint, PickupPoint,
+};
 pub use common::{Company, Fare, Pagination};
 pub use trip::{Route, Schedule, Trip, TripSearchResponse, TripStatus};

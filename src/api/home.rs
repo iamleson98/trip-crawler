@@ -54,14 +54,8 @@ impl Home {
     /// # Errors
     /// See [`crate::Error`].
     pub async fn raw_html(&self, endpoint: HomeEndpoint) -> Result<String> {
-        let url: Url = self
-            .client
-            .endpoints()
-            .base
-            .join(endpoint.path())?;
-        self.client
-            .post_mvc_text(&url, &HomeBody {})
-            .await
+        let url: Url = self.client.endpoints().base.join(endpoint.path())?;
+        self.client.post_mvc_text(&url, &HomeBody {}).await
     }
 
     /// Convenience: popular routes HTML.

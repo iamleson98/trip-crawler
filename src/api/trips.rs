@@ -1,7 +1,7 @@
 //! `GET /v2/route/` — the canonical bus-trip search endpoint.
 //!
 //! Full example:
-//! ```
+//! ```http
 //! GET https://internal-vroute.vexere.com/v2/route/
 //!   ?filter[from]=24
 //!   &filter[to]=482
@@ -131,14 +131,12 @@ impl Trips {
     /// # Ok(())
     /// # }
     /// ```
-    pub async fn search(
-        &self,
-        from: u64,
-        to: u64,
-        date: &str,
-    ) -> Result<TripSearchResponse> {
-        self.search_with(TripFilter::new(from, to, date), TripSearchOptions::default())
-            .await
+    pub async fn search(&self, from: u64, to: u64, date: &str) -> Result<TripSearchResponse> {
+        self.search_with(
+            TripFilter::new(from, to, date),
+            TripSearchOptions::default(),
+        )
+        .await
     }
 
     /// Search with full control over filter + options.
@@ -157,10 +155,7 @@ impl Trips {
     ///
     /// First page is fetched to learn `total_pages`, then remaining pages are
     /// requested in parallel.
-    pub async fn search_all_pages(
-        &self,
-        filter: TripFilter,
-    ) -> Result<Vec<crate::models::Trip>> {
+    pub async fn search_all_pages(&self, filter: TripFilter) -> Result<Vec<crate::models::Trip>> {
         filter.validate()?;
         // Page 1 first, to learn total_pages.
         let first = self

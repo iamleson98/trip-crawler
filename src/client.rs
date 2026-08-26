@@ -167,7 +167,10 @@ impl VexereClient {
             });
         }
         let token: AnonymousToken = resp.json().await?;
-        debug!("fetched anonymous bearer token (expires in {}s)", token.expires_in);
+        debug!(
+            "fetched anonymous bearer token (expires in {}s)",
+            token.expires_in
+        );
         Ok(token)
     }
 
@@ -407,10 +410,7 @@ impl VexereClient {
 }
 
 fn is_retryable_status(s: StatusCode) -> bool {
-    matches!(
-        s.as_u16(),
-        408 | 425 | 429 | 500 | 502 | 503 | 504
-    )
+    matches!(s.as_u16(), 408 | 425 | 429 | 500 | 502 | 503 | 504)
 }
 
 fn truncate_body(s: &str) -> String {
@@ -446,5 +446,3 @@ fn generate_origin_request_id() -> String {
     };
     format!("vex-web_{ms}_{suffix}")
 }
-
-
