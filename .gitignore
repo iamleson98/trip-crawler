@@ -1,0 +1,33 @@
+# Rust build artifacts
+/target/
+**/target/
+
+# Cargo lockfile is kept for binaries, ignored for libraries by default.
+# This is a mixed lib+bin project, so Cargo.lock IS committed.
+
+# Backup files
+*.rs.bk
+*.rs.orig
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local environment / secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Output directories created by the crawler
+/out/
+/output/
+*.jsonl.tmp
+
+# Logs
+*.log
