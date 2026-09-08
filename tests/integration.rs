@@ -405,3 +405,62 @@ fn endpoints_default_points_at_production_hosts() {
         "https://internal-vroute.vexere.com/"
     );
 }
+
+// ---------------------------------------------------------------------------
+// Hidden pickup-point filtering — the fix for the "1,953 pickup points" bug.
+// ---------------------------------------------------------------------------
+
+#[test]
+fn fixture_trips_hidden_points_parses() {
+    let raw = include_str!("../fixtures/trips_hidden_points.json");
+    let r: TripSearchResponse = serde_json::from_str(raw).unwrap();
+    assert_eq!(r.data.len(), 1, "fixture has one trip");
+    let t = &r.data[0];
+    assert_eq!(t.route.id, 7275428);
+    // Raw (pre-filter) shape captured from the live API on 2026-09-09:
+    // the route carries 2 hidden + 1 visible pickup, 1 hidden + 1 visible dropoff.
+    assert_eq!(t.route.pickup_points.len(), 3);
+    assert_eq!(t.route.dropoff_points.len(), 2);
+}
+
+#[test]
+fn strip_hidden_points_keeps_only_visible_points() {
+    let raw = include_str!("../fixtures/trips_hidden_points.json");
+    let mut r: TripSearchResponse = serde_json::from_str(raw).unwrap();
+    vexerers::api::trips::strip_hidden_points(&mut r);
+    let t = &r.data[0];
+    // Exactly the points the website renders for route 7275428.
+    assert_eq!(t.route.pickup_points.len(), 1);
+    assert_eq!(t.route.pickup_points[0].name, "Bến xe Thượng Lý");
+    assert_eq!(t.route.pickup_points[0].hidden, 0);
+    assert_eq!(t.route.dropoff_points.len(), 1);
+    assert_eq!(t.route.dropoff_points[0].hidden, 0);
+}
+
+#[test]
+fn strip_hidden_points_missing_field_treated_as_visible() {
+    // Points without a `hidden` field at all must be kept (FE-tolerant).
+    let raw = r#"{
+        "message": "success",
+        "data": [{
+            "idIndex": "x",
+            "route": {
+                "id": 1,
+                "pickup_points": [
+                    {"id": 1, "name": "no hidden field"},
+                    {"id": 2, "name": "hidden", "hidden": 1},
+                    {"id": 3, "name": "explicitly visible", "hidden": 0}
+                ],
+                "dropoff_points": []
+            },
+            "company": {"id": 9, "name": "c"}
+        }],
+        "page": 1, "page_size": 50, "total": 1, "total_pages": 1
+    }"#;
+    let mut r: TripSearchResponse = serde_json::from_str(raw).unwrap();
+    vexerers::api::trips::strip_hidden_points(&mut r);
+    let pu = &r.data[0].route.pickup_points;
+    assert_eq!(pu.len(), 2, "missing `hidden` kept + explicit visible kept");
+    assert_eq!(pu[0].name, "no hidden field");
+    assert_eq!(pu[1].name, "explicitly visible");
+}

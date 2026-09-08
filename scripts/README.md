@@ -34,13 +34,19 @@ each pair across a 3-day window.
 
 ```bash
 python scripts/nxn_crawl.py \
-    --from-date 2026-09-01 \
-    --to-date   2026-09-03 \
+    --from-date 2026-09-09 \
+    --to-date   2026-09-11 \
     --out       /tmp/nxn_out
 ```
 
 Resumable: pairs with a non-empty `trips.jsonl` are skipped on re-run.
 Manifest is written incrementally after every pair — safe to interrupt.
+
+**Hidden-point filtering**: `vexere crawl-trips` output already matches the
+website — the Rust client strips points flagged `hidden: 1` at the API layer
+(`vexerers::api::trips::strip_hidden_points`). The `/v2/route/` API otherwise
+returns each operator's entire point pool (e.g. 1,953 points for Anh Huy Đất
+Cảng) on every trip.
 
 ### `build_excel.py` — flat fares workbook
 
@@ -83,8 +89,10 @@ Each per-pair sheet has 25 columns (vs. 13 in the flat workbook):
 - `trip_id`, `route_id`
 
 Also adds a master "Pickup & Dropoff Points" sheet with one row per
-distinct point across all 72 pairs (~10,740 rows), deduplicated by
-(point_type, name, lat, lon) and sorted by usage count.
+distinct point across all 72 pairs (~6,870 rows), deduplicated by
+(point_type, name, lat, lon) and sorted by usage count. Only
+website-visible points are included (hidden-flagged points are dropped,
+see `_visible_points`).
 
 ### `import_to_sqlite.py` — load trips.jsonl into the booking-app SQLite DB
 
@@ -192,22 +200,20 @@ Those tables are operational and reserved for the live app.
 #### Verified against the sample dataset
 
 Tested end-to-end on `data/trips-sample/trips.jsonl` (Hà Nội → Sa Pa,
-968 trips, 4 days):
+777 trips, 3 days, hidden-point filter active):
 
-- 968 trips parsed → 700 unique `trip_session` rows (268 duplicates
-  collapsed: same physical departure, different boarding/dropoff point
-  combos in VeXeRe's API response).
-- 26 brands, 51 routes, 44 bus_layouts, 1,040 seats, 318 pickup_points,
-  243 schedules.
-- 16,562 `seat_inventory` rows (sum of total_seats across trip_sessions).
+- 777 trips parsed → 777 unique `trip_session` rows.
+- 58 places, 20 brands, 37 routes, 35 bus_layouts, 862 seats,
+  373 pickup_points (website-visible only), 258 schedules.
+- 17,891 `seat_inventory` rows (sum of total_seats across trip_sessions).
 - Re-run preserves all row counts (idempotent).
 - `--drop-existing` followed by re-import produces identical counts.
 
 ## Reproducibility
 
 The two `.xlsx` files in `data/` were produced by running these
-scripts against the 72-pair, 3-day crawl from 2026-09-01 to
-2026-09-03. To reproduce end-to-end:
+scripts against the 72-pair, 3-day crawl from 2026-09-09 to
+2026-09-11. To reproduce end-to-end:
 
 ```bash
 # 1. Build the binary

@@ -509,6 +509,18 @@ class Importer:
                     continue
         return 0.0, 0.0
 
+    @staticmethod
+    def _visible_points(points: list[dict] | None) -> list[dict]:
+        """Keep only points the VeXeRe website renders for this route.
+
+        The /v2/route/ search API attaches the operator's ENTIRE point pool
+        to every trip; inactive points carry `hidden: 1`. E.g. route 7275428
+        (Hải Phòng → Hà Nội, Anh Huy Đất Cảng) returns 1,953 raw points but
+        serves exactly 1 (Bến xe Thượng Lý). Points missing the `hidden` key
+        are treated as visible (matches the FE's tolerant rendering).
+        """
+        return [p for p in (points or []) if not p.get("hidden")]
+
     def collect_trip(self, trip: dict) -> None:
         """Pass 1: harvest dimensions from one trip into the in-memory
         dedup tables. Does NOT write to DB."""
@@ -530,8 +542,11 @@ class Importer:
 
         # Use first pickup_point coords as a representative lat/lon for the
         # 'from' place; first dropoff coords for the 'to' place.
-        pickups = route.get("pickup_points") or []
-        dropoffs = route.get("dropoff_points") or []
+        # NOTE: filter to visible points only — the /v2/route/ API returns the
+        # operator's ENTIRE point pool on every trip; the website only renders
+        # points with `hidden == 0` (route 7275428: 1,953 raw → 1 visible).
+        pickups = self._visible_points(route.get("pickup_points"))
+        dropoffs = self._visible_points(route.get("dropoff_points"))
         from_lat, from_lon = self._first_point_coords(pickups)
         to_lat, to_lon = self._first_point_coords(dropoffs)
 

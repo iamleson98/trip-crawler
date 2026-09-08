@@ -1,0 +1,170 @@
+{
+ "message": "success",
+ "data": [
+  {
+   "idIndex": "7275428_2026-09-09_09:45_161619_186747",
+   "route": {
+    "id": 7275428,
+    "name": " Hải Phòng - Bến xe Yên Nghĩa",
+    "pickup_points": [
+     {
+      "hidden": 1,
+      "region_ward_name": "Hồng An",
+      "unfixed_point": 0,
+      "is_hidden_foreign": 0,
+      "area_id": 162426,
+      "type": 1,
+      "english_name": "Quan Toan Office",
+      "display_name_vex": "Văn phòng Quán Toan",
+      "duration": 15,
+      "hidden_ams": 1,
+      "hidden_bms": 0,
+      "district": "Hồng Bàng",
+      "name": "Văn phòng Quán Toan",
+      "display_name_vex_lowercase": "văn phòng quán toan",
+      "location": {
+       "lon": 106.603087,
+       "lat": 20.889205
+      },
+      "id": 317965,
+      "name_lowercase": "văn phòng quán toan"
+     },
+     {
+      "hidden": 1,
+      "region_ward_name": "Hồng Bàng",
+      "unfixed_point": 0,
+      "is_hidden_foreign": 0,
+      "area_id": 156182,
+      "type": 1,
+      "english_name": "So Dau Fork",
+      "display_name_vex": "Ngã 3 Sở Dầu",
+      "duration": 5,
+      "hidden_ams": 1,
+      "hidden_bms": 0,
+      "district": "Hồng Bàng",
+      "name": "Ngã 3 Sở Dầu",
+      "display_name_vex_lowercase": "ngã 3 sở dầu",
+      "location": {
+       "lon": 106.65177900000003,
+       "lat": 20.873471
+      },
+      "id": 317966,
+      "name_lowercase": "ngã 3 sở dầu"
+     },
+     {
+      "hidden": 0,
+      "region_ward_name": "Hồng Bàng",
+      "unfixed_point": 0,
+      "area_id": 161619,
+      "type": 1,
+      "english_name": "Thuong Ly Station",
+      "display_name_vex": "Bến xe Thượng Lý",
+      "duration": 0,
+      "hidden_ams": 1,
+      "hidden_bms": 1,
+      "district": "Hồng Bàng",
+      "name": "Bến xe Thượng Lý",
+      "display_name_vex_lowercase": "bến xe thượng lý",
+      "location": {
+       "lon": 106.656755,
+       "lat": 20.868052
+      },
+      "id": 0,
+      "name_lowercase": "bến xe thượng lý"
+     }
+    ],
+    "dropoff_points": [
+     {
+      "hidden": 1,
+      "region_ward_name": "Yên Hòa",
+      "unfixed_point": 0,
+      "area_id": 186747,
+      "type": 1,
+      "english_name": "Van phong 2/293 Khuat Duy Tien",
+      "display_name_vex": "Văn phòng 2/293 Khuất Duy Tiến",
+      "duration": 115,
+      "hidden_ams": 0,
+      "hidden_bms": 1,
+      "district": "Cầu Giấy",
+      "name": "Hidden Dropoff",
+      "display_name_vex_lowercase": "văn phòng 2/293 khuất duy tiến",
+      "location": {
+       "lon": 105.792884,
+       "lat": 21.0038063
+      },
+      "id": 0,
+      "name_lowercase": "văn phòng 2/293 khuất duy tiến"
+     },
+     {
+      "hidden": 0,
+      "region_ward_name": "Yên Hòa",
+      "unfixed_point": 0,
+      "area_id": 186747,
+      "type": 1,
+      "english_name": "Van phong 2/293 Khuat Duy Tien",
+      "display_name_vex": "Văn phòng 2/293 Khuất Duy Tiến",
+      "duration": 115,
+      "hidden_ams": 0,
+      "hidden_bms": 1,
+      "district": "Cầu Giấy",
+      "name": "Văn phòng 2/293 Khuất Duy Tiến",
+      "display_name_vex_lowercase": "văn phòng 2/293 khuất duy tiến",
+      "location": {
+       "lon": 105.792884,
+       "lat": 21.0038063
+      },
+      "id": 0,
+      "name_lowercase": "văn phòng 2/293 khuất duy tiến"
+     }
+    ],
+    "schedules": [
+     {
+      "trip_code": "v2CNPuCRD7sgsaAjA5IgI0NTCkh7wDOgowOS0wOS0yMDI2SBtQGFgAeAGoAa9koAMB",
+      "hour": "09",
+      "minute": "45",
+      "pickup_date": "2026-09-09T09:45+07:00",
+      "arrival_time": "2026-09-09T11:40+07:00",
+      "fare": {
+       "original": 160000,
+       "discount": -1,
+       "max": 160000
+      },
+      "deposit_selling": 0,
+      "config": "ONLINE",
+      "seat_type": 1,
+      "available_seats": 45,
+      "total_available_seats": 45,
+      "vehicle_quality": 1,
+      "total_seats": 45,
+      "is_updating_fare": 0,
+      "vehicle_type": "Ghế ngồi 45 chỗ",
+      "seat_template_name": "Ghế ngồi 45 chỗ",
+      "refundable": 1,
+      "unchoosable": 1,
+      "seat_template_id": 3978,
+      "is_enhance": false,
+      "note": "",
+      "soldout_reason": 0,
+      "time_limit": 45,
+      "facility_info": "1~91|WFI|Wifi",
+      "is_last_minute_activated": 0,
+      "is_early_bird_activated": 0,
+      "early_bird_min_fill_rate": 0,
+      "fill_rate": 0
+     }
+    ]
+   },
+   "company": {
+    "id": 12847,
+    "name": "Anh Huy Đất Cảng"
+   }
+  }
+ ],
+ "page": 1,
+ "page_size": 50,
+ "total": 1,
+ "total_pages": 1,
+ "area": {},
+ "companies": [],
+ "diversity": {}
+}

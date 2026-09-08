@@ -1,13 +1,123 @@
 [
   {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/24_29",
+    "n_trips": 258,
+    "n_fares": 516,
+    "elapsed_seconds": 1.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/24_15",
+    "n_trips": 705,
+    "n_fares": 1410,
+    "elapsed_seconds": 2.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 27,
+    "to_name": "Hải Phòng",
+    "pair_dir": "/tmp/nxn_out/24_27",
+    "n_trips": 8067,
+    "n_fares": 16146,
+    "elapsed_seconds": 34.1,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/24_705",
+    "n_trips": 327,
+    "n_fares": 654,
+    "elapsed_seconds": 2.1,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 457,
+    "to_name": "Đà Lạt",
+    "pair_dir": "/tmp/nxn_out/24_457",
+    "n_trips": 9,
+    "n_fares": 18,
+    "elapsed_seconds": 0.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 482,
+    "to_name": "Sa Pa",
+    "pair_dir": "/tmp/nxn_out/24_482",
+    "n_trips": 778,
+    "n_fares": 1556,
+    "elapsed_seconds": 3.0,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 417,
+    "to_name": "Nha Trang",
+    "pair_dir": "/tmp/nxn_out/24_417",
+    "n_trips": 94,
+    "n_fares": 188,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 24,
+    "from_name": "Hà Nội",
+    "to_id": 278,
+    "to_name": "Hà Giang",
+    "pair_dir": "/tmp/nxn_out/24_278",
+    "n_trips": 459,
+    "n_fares": 930,
+    "elapsed_seconds": 2.4,
+    "returncode": 0
+  },
+  {
+    "from_id": 29,
+    "from_name": "Hồ Chí Minh",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/29_24",
+    "n_trips": 254,
+    "n_fares": 508,
+    "elapsed_seconds": 1.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 29,
+    "from_name": "Hồ Chí Minh",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/29_15",
+    "n_trips": 832,
+    "n_fares": 1664,
+    "elapsed_seconds": 2.7,
+    "returncode": 0
+  },
+  {
     "from_id": 29,
     "from_name": "Hồ Chí Minh",
     "to_id": 27,
     "to_name": "Hải Phòng",
     "pair_dir": "/tmp/nxn_out/29_27",
-    "n_trips": 125,
-    "n_fares": 250,
-    "elapsed_seconds": 1.8,
+    "n_trips": 73,
+    "n_fares": 146,
+    "elapsed_seconds": 0.8,
     "returncode": 0
   },
   {
@@ -16,9 +126,9 @@
     "to_id": 705,
     "to_name": "Huế",
     "pair_dir": "/tmp/nxn_out/29_705",
-    "n_trips": 529,
-    "n_fares": 1058,
-    "elapsed_seconds": 7.7,
+    "n_trips": 398,
+    "n_fares": 796,
+    "elapsed_seconds": 2.4,
     "returncode": 0
   },
   {
@@ -27,9 +137,9 @@
     "to_id": 457,
     "to_name": "Đà Lạt",
     "pair_dir": "/tmp/nxn_out/29_457",
-    "n_trips": 3509,
-    "n_fares": 7018,
-    "elapsed_seconds": 20.5,
+    "n_trips": 2816,
+    "n_fares": 5632,
+    "elapsed_seconds": 3.9,
     "returncode": 0
   },
   {
@@ -40,7 +150,7 @@
     "pair_dir": "/tmp/nxn_out/29_482",
     "n_trips": 9,
     "n_fares": 18,
-    "elapsed_seconds": 1.9,
+    "elapsed_seconds": 0.8,
     "returncode": 0
   },
   {
@@ -49,9 +159,9 @@
     "to_id": 417,
     "to_name": "Nha Trang",
     "pair_dir": "/tmp/nxn_out/29_417",
-    "n_trips": 2464,
-    "n_fares": 4928,
-    "elapsed_seconds": 27.1,
+    "n_trips": 2435,
+    "n_fares": 4870,
+    "elapsed_seconds": 6.5,
     "returncode": 0
   },
   {
@@ -60,9 +170,9 @@
     "to_id": 278,
     "to_name": "Hà Giang",
     "pair_dir": "/tmp/nxn_out/29_278",
-    "n_trips": 1,
-    "n_fares": 2,
-    "elapsed_seconds": 0.6,
+    "n_trips": 0,
+    "n_fares": 0,
+    "elapsed_seconds": 0.5,
     "returncode": 0
   },
   {
@@ -71,9 +181,9 @@
     "to_id": 24,
     "to_name": "Hà Nội",
     "pair_dir": "/tmp/nxn_out/15_24",
-    "n_trips": 798,
-    "n_fares": 1596,
-    "elapsed_seconds": 15.1,
+    "n_trips": 558,
+    "n_fares": 1116,
+    "elapsed_seconds": 3.3,
     "returncode": 0
   },
   {
@@ -82,9 +192,9 @@
     "to_id": 29,
     "to_name": "Hồ Chí Minh",
     "pair_dir": "/tmp/nxn_out/15_29",
-    "n_trips": 967,
-    "n_fares": 1934,
-    "elapsed_seconds": 9.8,
+    "n_trips": 686,
+    "n_fares": 1372,
+    "elapsed_seconds": 2.1,
     "returncode": 0
   },
   {
@@ -93,9 +203,9 @@
     "to_id": 27,
     "to_name": "Hải Phòng",
     "pair_dir": "/tmp/nxn_out/15_27",
-    "n_trips": 121,
-    "n_fares": 242,
-    "elapsed_seconds": 1.7,
+    "n_trips": 80,
+    "n_fares": 160,
+    "elapsed_seconds": 0.9,
     "returncode": 0
   },
   {
@@ -104,9 +214,9 @@
     "to_id": 705,
     "to_name": "Huế",
     "pair_dir": "/tmp/nxn_out/15_705",
-    "n_trips": 3316,
-    "n_fares": 6632,
-    "elapsed_seconds": 24.2,
+    "n_trips": 2970,
+    "n_fares": 5940,
+    "elapsed_seconds": 3.2,
     "returncode": 0
   },
   {
@@ -115,9 +225,9 @@
     "to_id": 457,
     "to_name": "Đà Lạt",
     "pair_dir": "/tmp/nxn_out/15_457",
-    "n_trips": 488,
-    "n_fares": 976,
-    "elapsed_seconds": 7.7,
+    "n_trips": 476,
+    "n_fares": 952,
+    "elapsed_seconds": 2.3,
     "returncode": 0
   },
   {
@@ -126,9 +236,9 @@
     "to_id": 482,
     "to_name": "Sa Pa",
     "pair_dir": "/tmp/nxn_out/15_482",
-    "n_trips": 26,
-    "n_fares": 52,
-    "elapsed_seconds": 0.8,
+    "n_trips": 18,
+    "n_fares": 36,
+    "elapsed_seconds": 0.6,
     "returncode": 0
   },
   {
@@ -137,537 +247,9 @@
     "to_id": 417,
     "to_name": "Nha Trang",
     "pair_dir": "/tmp/nxn_out/15_417",
-    "n_trips": 620,
-    "n_fares": 1240,
-    "elapsed_seconds": 16.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/27_24",
-    "n_trips": 7018,
-    "n_fares": 14104,
-    "elapsed_seconds": 109.9,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/27_29",
-    "n_trips": 87,
-    "n_fares": 174,
-    "elapsed_seconds": 11.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/27_15",
-    "n_trips": 92,
-    "n_fares": 184,
-    "elapsed_seconds": 1.1,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/27_705",
-    "n_trips": 36,
-    "n_fares": 72,
-    "elapsed_seconds": 0.8,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 457,
-    "to_name": "Đà Lạt",
-    "pair_dir": "/tmp/nxn_out/27_457",
-    "n_trips": 1,
-    "n_fares": 2,
-    "elapsed_seconds": 5.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 482,
-    "to_name": "Sa Pa",
-    "pair_dir": "/tmp/nxn_out/27_482",
-    "n_trips": 69,
-    "n_fares": 138,
-    "elapsed_seconds": 1.5,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 417,
-    "to_name": "Nha Trang",
-    "pair_dir": "/tmp/nxn_out/27_417",
-    "n_trips": 12,
-    "n_fares": 24,
-    "elapsed_seconds": 0.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 27,
-    "from_name": "Hải Phòng",
-    "to_id": 278,
-    "to_name": "Hà Giang",
-    "pair_dir": "/tmp/nxn_out/27_278",
-    "n_trips": 45,
-    "n_fares": 90,
-    "elapsed_seconds": 2.1,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/705_24",
-    "n_trips": 375,
-    "n_fares": 750,
-    "elapsed_seconds": 3.0,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/705_29",
-    "n_trips": 359,
-    "n_fares": 718,
-    "elapsed_seconds": 7.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/705_15",
-    "n_trips": 6418,
-    "n_fares": 16221,
-    "elapsed_seconds": 9.9,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 27,
-    "to_name": "Hải Phòng",
-    "pair_dir": "/tmp/nxn_out/705_27",
-    "n_trips": 108,
-    "n_fares": 270,
-    "elapsed_seconds": 0.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 457,
-    "to_name": "Đà Lạt",
-    "pair_dir": "/tmp/nxn_out/705_457",
-    "n_trips": 73,
-    "n_fares": 146,
-    "elapsed_seconds": 1.3,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 482,
-    "to_name": "Sa Pa",
-    "pair_dir": "/tmp/nxn_out/705_482",
-    "n_trips": 11,
-    "n_fares": 22,
-    "elapsed_seconds": 1.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 417,
-    "to_name": "Nha Trang",
-    "pair_dir": "/tmp/nxn_out/705_417",
-    "n_trips": 104,
-    "n_fares": 208,
-    "elapsed_seconds": 1.2,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/24_29",
-    "n_trips": 442,
-    "n_fares": 884,
-    "elapsed_seconds": 1.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/24_15",
-    "n_trips": 914,
-    "n_fares": 1828,
-    "elapsed_seconds": 2.0,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 27,
-    "to_name": "Hải Phòng",
-    "pair_dir": "/tmp/nxn_out/24_27",
-    "n_trips": 6028,
-    "n_fares": 12360,
-    "elapsed_seconds": 82.0,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/24_705",
-    "n_trips": 376,
-    "n_fares": 752,
-    "elapsed_seconds": 2.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 457,
-    "to_name": "Đà Lạt",
-    "pair_dir": "/tmp/nxn_out/24_457",
-    "n_trips": 27,
-    "n_fares": 54,
-    "elapsed_seconds": 5.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 482,
-    "to_name": "Sa Pa",
-    "pair_dir": "/tmp/nxn_out/24_482",
-    "n_trips": 969,
-    "n_fares": 1938,
-    "elapsed_seconds": 8.0,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 417,
-    "to_name": "Nha Trang",
-    "pair_dir": "/tmp/nxn_out/24_417",
-    "n_trips": 147,
-    "n_fares": 294,
-    "elapsed_seconds": 0.9,
-    "returncode": 0
-  },
-  {
-    "from_id": 24,
-    "from_name": "Hà Nội",
-    "to_id": 278,
-    "to_name": "Hà Giang",
-    "pair_dir": "/tmp/nxn_out/24_278",
-    "n_trips": 488,
-    "n_fares": 988,
-    "elapsed_seconds": 4.1,
-    "returncode": 0
-  },
-  {
-    "from_id": 29,
-    "from_name": "Hồ Chí Minh",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/29_24",
-    "n_trips": 449,
-    "n_fares": 898,
-    "elapsed_seconds": 8.0,
-    "returncode": 0
-  },
-  {
-    "from_id": 29,
-    "from_name": "Hồ Chí Minh",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/29_15",
-    "n_trips": 1016,
-    "n_fares": 2032,
-    "elapsed_seconds": 5.9,
-    "returncode": 0
-  },
-  {
-    "from_id": 705,
-    "from_name": "Huế",
-    "to_id": 278,
-    "to_name": "Hà Giang",
-    "pair_dir": "/tmp/nxn_out/705_278",
-    "n_trips": 5,
-    "n_fares": 10,
-    "elapsed_seconds": 0.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 457,
-    "from_name": "Đà Lạt",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/457_24",
-    "n_trips": 46,
-    "n_fares": 92,
-    "elapsed_seconds": 1.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 457,
-    "from_name": "Đà Lạt",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/457_29",
-    "n_trips": 4034,
-    "n_fares": 8068,
-    "elapsed_seconds": 12.8,
-    "returncode": 0
-  },
-  {
-    "from_id": 457,
-    "from_name": "Đà Lạt",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/457_15",
-    "n_trips": 460,
-    "n_fares": 920,
-    "elapsed_seconds": 3.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 457,
-    "from_name": "Đà Lạt",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/457_705",
-    "n_trips": 74,
-    "n_fares": 148,
-    "elapsed_seconds": 1.1,
-    "returncode": 0
-  },
-  {
-    "from_id": 457,
-    "from_name": "Đà Lạt",
-    "to_id": 417,
-    "to_name": "Nha Trang",
-    "pair_dir": "/tmp/nxn_out/457_417",
-    "n_trips": 417,
-    "n_fares": 834,
-    "elapsed_seconds": 1.9,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/482_24",
-    "n_trips": 910,
-    "n_fares": 1820,
-    "elapsed_seconds": 7.2,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/482_29",
-    "n_trips": 9,
-    "n_fares": 18,
-    "elapsed_seconds": 5.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/482_15",
-    "n_trips": 28,
-    "n_fares": 56,
-    "elapsed_seconds": 1.7,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 27,
-    "to_name": "Hải Phòng",
-    "pair_dir": "/tmp/nxn_out/482_27",
-    "n_trips": 72,
-    "n_fares": 144,
-    "elapsed_seconds": 1.2,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/482_705",
-    "n_trips": 12,
-    "n_fares": 24,
-    "elapsed_seconds": 1.5,
-    "returncode": 0
-  },
-  {
-    "from_id": 482,
-    "from_name": "Sa Pa",
-    "to_id": 278,
-    "to_name": "Hà Giang",
-    "pair_dir": "/tmp/nxn_out/482_278",
-    "n_trips": 64,
-    "n_fares": 128,
-    "elapsed_seconds": 1.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/417_24",
-    "n_trips": 98,
-    "n_fares": 196,
-    "elapsed_seconds": 0.8,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/417_29",
-    "n_trips": 2797,
-    "n_fares": 5594,
-    "elapsed_seconds": 13.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 15,
-    "to_name": "Đà Nẵng",
-    "pair_dir": "/tmp/nxn_out/417_15",
-    "n_trips": 643,
-    "n_fares": 1286,
-    "elapsed_seconds": 3.2,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 27,
-    "to_name": "Hải Phòng",
-    "pair_dir": "/tmp/nxn_out/417_27",
-    "n_trips": 18,
-    "n_fares": 36,
-    "elapsed_seconds": 1.2,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/417_705",
-    "n_trips": 130,
-    "n_fares": 260,
-    "elapsed_seconds": 1.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 417,
-    "from_name": "Nha Trang",
-    "to_id": 457,
-    "to_name": "Đà Lạt",
-    "pair_dir": "/tmp/nxn_out/417_457",
-    "n_trips": 440,
-    "n_fares": 880,
-    "elapsed_seconds": 7.1,
-    "returncode": 0
-  },
-  {
-    "from_id": 278,
-    "from_name": "Hà Giang",
-    "to_id": 24,
-    "to_name": "Hà Nội",
-    "pair_dir": "/tmp/nxn_out/278_24",
-    "n_trips": 452,
-    "n_fares": 904,
-    "elapsed_seconds": 2.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 278,
-    "from_name": "Hà Giang",
-    "to_id": 29,
-    "to_name": "Hồ Chí Minh",
-    "pair_dir": "/tmp/nxn_out/278_29",
-    "n_trips": 1,
-    "n_fares": 2,
-    "elapsed_seconds": 1.6,
-    "returncode": 0
-  },
-  {
-    "from_id": 278,
-    "from_name": "Hà Giang",
-    "to_id": 27,
-    "to_name": "Hải Phòng",
-    "pair_dir": "/tmp/nxn_out/278_27",
-    "n_trips": 39,
-    "n_fares": 78,
-    "elapsed_seconds": 6.3,
-    "returncode": 0
-  },
-  {
-    "from_id": 278,
-    "from_name": "Hà Giang",
-    "to_id": 705,
-    "to_name": "Huế",
-    "pair_dir": "/tmp/nxn_out/278_705",
-    "n_trips": 3,
-    "n_fares": 6,
-    "elapsed_seconds": 1.4,
-    "returncode": 0
-  },
-  {
-    "from_id": 278,
-    "from_name": "Hà Giang",
-    "to_id": 482,
-    "to_name": "Sa Pa",
-    "pair_dir": "/tmp/nxn_out/278_482",
-    "n_trips": 57,
-    "n_fares": 114,
-    "elapsed_seconds": 1.2,
+    "n_trips": 744,
+    "n_fares": 1488,
+    "elapsed_seconds": 2.4,
     "returncode": 0
   },
   {
@@ -678,7 +260,216 @@
     "pair_dir": "/tmp/nxn_out/15_278",
     "n_trips": 0,
     "n_fares": 0,
+    "elapsed_seconds": 0.4,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/27_24",
+    "n_trips": 5575,
+    "n_fares": 11162,
+    "elapsed_seconds": 32.2,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/27_29",
+    "n_trips": 66,
+    "n_fares": 132,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/27_15",
+    "n_trips": 81,
+    "n_fares": 162,
+    "elapsed_seconds": 0.9,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/27_705",
+    "n_trips": 33,
+    "n_fares": 66,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 457,
+    "to_name": "Đà Lạt",
+    "pair_dir": "/tmp/nxn_out/27_457",
+    "n_trips": 2,
+    "n_fares": 4,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 482,
+    "to_name": "Sa Pa",
+    "pair_dir": "/tmp/nxn_out/27_482",
+    "n_trips": 67,
+    "n_fares": 134,
+    "elapsed_seconds": 1.0,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 417,
+    "to_name": "Nha Trang",
+    "pair_dir": "/tmp/nxn_out/27_417",
+    "n_trips": 12,
+    "n_fares": 24,
     "elapsed_seconds": 0.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 27,
+    "from_name": "Hải Phòng",
+    "to_id": 278,
+    "to_name": "Hà Giang",
+    "pair_dir": "/tmp/nxn_out/27_278",
+    "n_trips": 48,
+    "n_fares": 96,
+    "elapsed_seconds": 0.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/705_24",
+    "n_trips": 254,
+    "n_fares": 508,
+    "elapsed_seconds": 1.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/705_29",
+    "n_trips": 142,
+    "n_fares": 284,
+    "elapsed_seconds": 1.2,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/705_15",
+    "n_trips": 3022,
+    "n_fares": 6056,
+    "elapsed_seconds": 3.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 27,
+    "to_name": "Hải Phòng",
+    "pair_dir": "/tmp/nxn_out/705_27",
+    "n_trips": 32,
+    "n_fares": 64,
+    "elapsed_seconds": 0.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 457,
+    "to_name": "Đà Lạt",
+    "pair_dir": "/tmp/nxn_out/705_457",
+    "n_trips": 51,
+    "n_fares": 102,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 482,
+    "to_name": "Sa Pa",
+    "pair_dir": "/tmp/nxn_out/705_482",
+    "n_trips": 9,
+    "n_fares": 18,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 417,
+    "to_name": "Nha Trang",
+    "pair_dir": "/tmp/nxn_out/705_417",
+    "n_trips": 121,
+    "n_fares": 242,
+    "elapsed_seconds": 1.1,
+    "returncode": 0
+  },
+  {
+    "from_id": 705,
+    "from_name": "Huế",
+    "to_id": 278,
+    "to_name": "Hà Giang",
+    "pair_dir": "/tmp/nxn_out/705_278",
+    "n_trips": 3,
+    "n_fares": 6,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 457,
+    "from_name": "Đà Lạt",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/457_24",
+    "n_trips": 27,
+    "n_fares": 54,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 457,
+    "from_name": "Đà Lạt",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/457_29",
+    "n_trips": 3310,
+    "n_fares": 6620,
+    "elapsed_seconds": 3.4,
+    "returncode": 0
+  },
+  {
+    "from_id": 457,
+    "from_name": "Đà Lạt",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/457_15",
+    "n_trips": 441,
+    "n_fares": 882,
+    "elapsed_seconds": 1.9,
     "returncode": 0
   },
   {
@@ -687,9 +478,20 @@
     "to_id": 27,
     "to_name": "Hải Phòng",
     "pair_dir": "/tmp/nxn_out/457_27",
-    "n_trips": 0,
-    "n_fares": 0,
+    "n_trips": 2,
+    "n_fares": 4,
     "elapsed_seconds": 0.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 457,
+    "from_name": "Đà Lạt",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/457_705",
+    "n_trips": 58,
+    "n_fares": 116,
+    "elapsed_seconds": 0.8,
     "returncode": 0
   },
   {
@@ -706,6 +508,17 @@
   {
     "from_id": 457,
     "from_name": "Đà Lạt",
+    "to_id": 417,
+    "to_name": "Nha Trang",
+    "pair_dir": "/tmp/nxn_out/457_417",
+    "n_trips": 356,
+    "n_fares": 712,
+    "elapsed_seconds": 1.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 457,
+    "from_name": "Đà Lạt",
     "to_id": 278,
     "to_name": "Hà Giang",
     "pair_dir": "/tmp/nxn_out/457_278",
@@ -717,12 +530,67 @@
   {
     "from_id": 482,
     "from_name": "Sa Pa",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/482_24",
+    "n_trips": 755,
+    "n_fares": 1510,
+    "elapsed_seconds": 3.2,
+    "returncode": 0
+  },
+  {
+    "from_id": 482,
+    "from_name": "Sa Pa",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/482_29",
+    "n_trips": 9,
+    "n_fares": 18,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 482,
+    "from_name": "Sa Pa",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/482_15",
+    "n_trips": 18,
+    "n_fares": 36,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 482,
+    "from_name": "Sa Pa",
+    "to_id": 27,
+    "to_name": "Hải Phòng",
+    "pair_dir": "/tmp/nxn_out/482_27",
+    "n_trips": 46,
+    "n_fares": 92,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 482,
+    "from_name": "Sa Pa",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/482_705",
+    "n_trips": 9,
+    "n_fares": 18,
+    "elapsed_seconds": 0.6,
+    "returncode": 0
+  },
+  {
+    "from_id": 482,
+    "from_name": "Sa Pa",
     "to_id": 457,
     "to_name": "Đà Lạt",
     "pair_dir": "/tmp/nxn_out/482_457",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 0.6,
+    "elapsed_seconds": 0.5,
     "returncode": 0
   },
   {
@@ -737,6 +605,83 @@
     "returncode": 0
   },
   {
+    "from_id": 482,
+    "from_name": "Sa Pa",
+    "to_id": 278,
+    "to_name": "Hà Giang",
+    "pair_dir": "/tmp/nxn_out/482_278",
+    "n_trips": 65,
+    "n_fares": 130,
+    "elapsed_seconds": 0.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/417_24",
+    "n_trips": 58,
+    "n_fares": 116,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/417_29",
+    "n_trips": 2534,
+    "n_fares": 5068,
+    "elapsed_seconds": 7.2,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 15,
+    "to_name": "Đà Nẵng",
+    "pair_dir": "/tmp/nxn_out/417_15",
+    "n_trips": 719,
+    "n_fares": 1438,
+    "elapsed_seconds": 4.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 27,
+    "to_name": "Hải Phòng",
+    "pair_dir": "/tmp/nxn_out/417_27",
+    "n_trips": 16,
+    "n_fares": 32,
+    "elapsed_seconds": 0.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/417_705",
+    "n_trips": 126,
+    "n_fares": 252,
+    "elapsed_seconds": 1.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 417,
+    "from_name": "Nha Trang",
+    "to_id": 457,
+    "to_name": "Đà Lạt",
+    "pair_dir": "/tmp/nxn_out/417_457",
+    "n_trips": 375,
+    "n_fares": 750,
+    "elapsed_seconds": 2.9,
+    "returncode": 0
+  },
+  {
     "from_id": 417,
     "from_name": "Nha Trang",
     "to_id": 482,
@@ -744,7 +689,7 @@
     "pair_dir": "/tmp/nxn_out/417_482",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 5.5,
+    "elapsed_seconds": 0.6,
     "returncode": 0
   },
   {
@@ -755,7 +700,29 @@
     "pair_dir": "/tmp/nxn_out/417_278",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 0.6,
+    "elapsed_seconds": 0.5,
+    "returncode": 0
+  },
+  {
+    "from_id": 278,
+    "from_name": "Hà Giang",
+    "to_id": 24,
+    "to_name": "Hà Nội",
+    "pair_dir": "/tmp/nxn_out/278_24",
+    "n_trips": 401,
+    "n_fares": 802,
+    "elapsed_seconds": 7.0,
+    "returncode": 0
+  },
+  {
+    "from_id": 278,
+    "from_name": "Hà Giang",
+    "to_id": 29,
+    "to_name": "Hồ Chí Minh",
+    "pair_dir": "/tmp/nxn_out/278_29",
+    "n_trips": 0,
+    "n_fares": 0,
+    "elapsed_seconds": 0.7,
     "returncode": 0
   },
   {
@@ -766,7 +733,29 @@
     "pair_dir": "/tmp/nxn_out/278_15",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 0.5,
+    "elapsed_seconds": 0.8,
+    "returncode": 0
+  },
+  {
+    "from_id": 278,
+    "from_name": "Hà Giang",
+    "to_id": 27,
+    "to_name": "Hải Phòng",
+    "pair_dir": "/tmp/nxn_out/278_27",
+    "n_trips": 42,
+    "n_fares": 84,
+    "elapsed_seconds": 2.1,
+    "returncode": 0
+  },
+  {
+    "from_id": 278,
+    "from_name": "Hà Giang",
+    "to_id": 705,
+    "to_name": "Huế",
+    "pair_dir": "/tmp/nxn_out/278_705",
+    "n_trips": 3,
+    "n_fares": 6,
+    "elapsed_seconds": 0.6,
     "returncode": 0
   },
   {
@@ -777,7 +766,18 @@
     "pair_dir": "/tmp/nxn_out/278_457",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 0.5,
+    "elapsed_seconds": 0.7,
+    "returncode": 0
+  },
+  {
+    "from_id": 278,
+    "from_name": "Hà Giang",
+    "to_id": 482,
+    "to_name": "Sa Pa",
+    "pair_dir": "/tmp/nxn_out/278_482",
+    "n_trips": 59,
+    "n_fares": 118,
+    "elapsed_seconds": 1.6,
     "returncode": 0
   },
   {
@@ -788,7 +788,7 @@
     "pair_dir": "/tmp/nxn_out/278_417",
     "n_trips": 0,
     "n_fares": 0,
-    "elapsed_seconds": 0.5,
+    "elapsed_seconds": 0.7,
     "returncode": 0
   }
 ]

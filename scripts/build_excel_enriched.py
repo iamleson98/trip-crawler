@@ -201,6 +201,22 @@ def _fmt_offset(mins: int) -> str:
     return f"T{sign}{mins}min"
 
 
+def _visible_points(points: list[dict]) -> list[dict]:
+    """Drop points the VeXeRe website does not render.
+
+    The `/v2/route/` search API returns each operator's ENTIRE point pool on
+    every trip regardless of route (e.g. 1,953 points for "Anh Huy Đất
+    Cảng"); the website only shows points whose top-level `hidden` flag is 0.
+    Route 7275428 (Hải Phòng → Hà Nội) serves exactly 1 pickup point
+    ("Bến xe Thượng Lý") — after this filter, that is exactly what we keep.
+
+    Points missing the `hidden` key are treated as visible (FE-tolerant).
+    This is a defensive second layer: the Rust crawler already filters at the
+    API layer, but this also fixes Excel rebuilds from older raw trips.jsonl.
+    """
+    return [p for p in (points or []) if not p.get("hidden")]
+
+
 def _point_summary(points: list[dict], max_lines: int = 12) -> str:
     """Build a multi-line summary of pickup/dropoff points.
 
@@ -317,8 +333,11 @@ def build_enriched_fares(trips_jsonl_path: Path, from_id: int, to_id: int,
             operator_id = company.get("id", 0)
             operator_name = company.get("name", "")
 
-            pickup_points = r.get("pickup_points") or []
-            dropoff_points = r.get("dropoff_points") or []
+            # Keep only the points the website actually shows for this route
+            # (the API returns the operator's whole pool with `hidden: 1`
+            # markers on inactive points — see _visible_points).
+            pickup_points = _visible_points(r.get("pickup_points"))
+            dropoff_points = _visible_points(r.get("dropoff_points"))
             n_pu = len(pickup_points)
             n_do = len(dropoff_points)
             pu_summary = _point_summary(pickup_points)
@@ -423,8 +442,8 @@ def build_points_master(pairs: list[dict]) -> pd.DataFrame:
                 company = t.get("company") or {}
                 operator_name = company.get("name", "")
 
-                for ptype, points in (("pickup", r.get("pickup_points") or []),
-                                       ("dropoff", r.get("dropoff_points") or [])):
+                for ptype, points in (("pickup", _visible_points(r.get("pickup_points"))),
+                                       ("dropoff", _visible_points(r.get("dropoff_points")))):
                     for p in points:
                         loc = p.get("location") or {}
                         lat = float(loc.get("lat", 0.0) or 0.0)
@@ -816,7 +835,7 @@ def main() -> int:
     for i, rec in enumerate(pairs_sorted, 1):
         pair_dir = Path(rec["pair_dir"])
         # Look up the date(s) for this pair from the manifest entry.
-        dates = rec.get("dates") or ["2026-09-01", "2026-09-02", "2026-09-03"]
+        dates = rec.get("dates") or ["2026-09-09", "2026-09-10", "2026-09-11"]
         df = build_enriched_fares(pair_dir / "trips.jsonl",
                                    rec["from_id"], rec["to_id"], dates)
         if df.empty:

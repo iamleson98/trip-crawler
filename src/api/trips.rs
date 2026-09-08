@@ -140,6 +140,9 @@ impl Trips {
     }
 
     /// Search with full control over filter + options.
+    ///
+    /// The response is post-processed to match exactly what the VeXeRe website
+    /// renders: see [`strip_hidden_points`].
     pub async fn search_with(
         &self,
         filter: TripFilter,
@@ -147,7 +150,9 @@ impl Trips {
     ) -> Result<TripSearchResponse> {
         filter.validate()?;
         let url = self.build_url(&filter, opts)?;
-        self.client.get_internal(&url).await
+        let mut resp: TripSearchResponse = self.client.get_internal(&url).await?;
+        strip_hidden_points(&mut resp);
+        Ok(resp)
     }
 
     /// Iterate **all** pages of a search concurrently (limited by the client's
@@ -209,5 +214,27 @@ impl Trips {
         q.append_pair("is_trigger_crawl", "1");
         drop(q);
         Ok(url)
+    }
+}
+
+/// Drop pickup/dropoff points the website does not show.
+///
+/// **Why this exists**: the `/v2/route/` search endpoint returns each
+/// operator's *entire* point pool on every trip, regardless of route. For
+/// example, on 2026-09-09 the trips of "Anh Huy Đất Cảng" (company 12847)
+/// each carried 1,953 pickup points — the operator's pool across the whole
+/// region — while route 7275428 (Hải Phòng → Hà Nội) actually serves exactly
+/// **1** pickup point ("Bến xe Thượng Lý"). The VeXeRe website only renders
+/// points whose top-level `hidden` flag is `0`; points with `hidden: 1` are
+/// inactive for that route. Filtering here — at the single choke point every
+/// search passes through — makes every downstream artifact (trips.jsonl,
+/// fares, Excel, SQLite) match the website exactly.
+///
+/// Points missing the `hidden` field entirely are kept (treated as visible),
+/// which matches the FE's tolerant rendering.
+pub fn strip_hidden_points(resp: &mut TripSearchResponse) {
+    for trip in &mut resp.data {
+        trip.route.pickup_points.retain(|p| p.hidden == 0);
+        trip.route.dropoff_points.retain(|p| p.hidden == 0);
     }
 }
