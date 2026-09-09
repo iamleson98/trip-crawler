@@ -48,6 +48,37 @@ Caveat: 476 schedules (the route-level point-aggregation rows guarded by
 carry no schedule_points; re-crawling with the hidden-points fix
 (`strip_hidden_points`) and re-running the seed fills them in.
 
+Update: `brand.logo_url` is now filled for 275/306 brands (the operator
+cover image VeXeRe shows on trip cards) — set by
+[`../scripts/fetch_vehicle_media.py`](../scripts/fetch_vehicle_media.py).
+
+## `vehicle-type-media/` — VeXeRe vehicle-type pictures
+
+VeXeRe serves a captioned photo gallery per **(company, seat-template)** —
+i.e. per vehicle type of each operator — via
+
+    GET https://api.vexere.com/v3/company/{company_id}/media
+        ?resource_id={seat_template_id}        (anonymous bearer token)
+
+Harvested by [`../scripts/fetch_vehicle_media.py`](../scripts/fetch_vehicle_media.py)
+across all 72 N×N pairs × 4 search dates:
+
+| Item | Count |
+|------|-------|
+| companies (operators) | 303 (280 matched to seed brands by name) |
+| vehicle types (seat templates) | 509 — labels match `bus_layout.name`, e.g. "Limousine giường phòng 21 chỗ (WC)" |
+| unique images (all downloaded locally) | 4,074 (4,057 JPEG + 17 PNG) |
+| cover images committed here | 502 (first image of each vehicle type, ~42 MB) |
+
+| File | Description |
+|------|-------------|
+| `vehicle_type_media.json` | Full manifest: per company → vehicle types → images (image_id, original URL, caption vi/en, local file when downloaded). `brand_slug` joins to `booking_seed.sqlite.brand`; `label` joins to `bus_layout.name`. |
+| `vehicle_images.html` | Review gallery — every vehicle type with its photos (missing local files fall back to the VeXeRe CDN URL). |
+| `vehicle_images/` | The committed cover image per vehicle type (1 per type). The complete 4,074-image set (~350 MB) is produced by re-running the script — every URL is in the manifest. |
+
+Captions describe vehicle parts (mặt trước / bên hông / nội thất / tiện
+ích — front, side, interior, amenities) and are in the manifest per image.
+
 ## `trips-sample/` — single-route sample dataset
 
 A complete crawl output for one route (Hà Nội → Sa Pa, 3 days,
