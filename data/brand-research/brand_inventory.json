@@ -1,0 +1,4986 @@
+[
+  {
+    "name": "Điền Linh Limousine",
+    "n_trips": 5103,
+    "n_routes": 10,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → HCM",
+      "DaLat → HaNoi",
+      "DaLat → Hue",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "HCM → DaLat",
+      "HaNoi → DaLat",
+      "Hue → DaLat",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Giường nằm 40 giường",
+      "Limousine 24 Phòng Đôi",
+      "Limousine 36 giường"
+    ],
+    "min_price": 250000,
+    "max_price": 900000
+  },
+  {
+    "name": "Anh Huy Travel",
+    "n_trips": 3384,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ"
+    ],
+    "min_price": 175000,
+    "max_price": 175000
+  },
+  {
+    "name": "Hoàng Công",
+    "n_trips": 2331,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Xe 29 chỗ"
+    ],
+    "min_price": 240000,
+    "max_price": 300000
+  },
+  {
+    "name": "Hải Âu",
+    "n_trips": 1905,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ",
+      "Ghế ngồi 45 chỗ",
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 160000
+  },
+  {
+    "name": "Phương Trang",
+    "n_trips": 1261,
+    "n_routes": 19,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → HCM",
+      "DaLat → Hue",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaLat",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HCM → NhaTrang",
+      "Hue → DaLat",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 34 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 700000
+  },
+  {
+    "name": "Việt Lào (Đà Nẵng)",
+    "n_trips": 887,
+    "n_routes": 20,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "DaNang → SaPa",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang",
+      "HaNoi → SaPa",
+      "Hue → DaNang",
+      "Hue → HaNoi",
+      "Hue → SaPa",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi",
+      "SaPa → DaNang",
+      "SaPa → HaNoi",
+      "SaPa → Hue"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ",
+      "Limousine 22 Phòng VIP (WC)",
+      "Limousine 24 Phòng VIP (KL)",
+      "Limousine 24 phòng VIP",
+      "Limousine 34 Phòng VIP"
+    ],
+    "min_price": 100000,
+    "max_price": 1450000
+  },
+  {
+    "name": "Hoàng Long - Hà Nội",
+    "n_trips": 853,
+    "n_routes": 16,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaiPhong → HCM",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Giường nằm 42 chỗ ",
+      "Limousine 22 phòng đôi"
+    ],
+    "min_price": 1350000,
+    "max_price": 2400000
+  },
+  {
+    "name": "Cúc Tùng",
+    "n_trips": 838,
+    "n_routes": 11,
+    "routes": [
+      "DaLat → DaNang",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → NhaTrang",
+      "Hue → DaNang",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine giường nằm đơn 21 chỗ (WC)"
+    ],
+    "min_price": 470000,
+    "max_price": 798000
+  },
+  {
+    "name": "Tân Quang Dũng",
+    "n_trips": 837,
+    "n_routes": 20,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → HCM",
+      "DaLat → Hue",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaLat",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → DaLat",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → HaNoi",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng Đôi (WC)",
+      "Limousine 22 Phòng Đôi G ( WC)",
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 75000,
+    "max_price": 1400000
+  },
+  {
+    "name": "HK BUSLINES",
+    "n_trips": 797,
+    "n_routes": 14,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang",
+      "HaNoi → SaPa",
+      "Hue → DaNang",
+      "Hue → HaNoi",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi",
+      "NhaTrang → Hue",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 28 chỗ",
+      "Limousine giường phòng 22 chỗ (WC)",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 20000,
+    "max_price": 1550000
+  },
+  {
+    "name": "Liên Hưng",
+    "n_trips": 723,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → NhaTrang",
+      "HCM → NhaTrang",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine 21 phòng đơn (WC)",
+      "Limousine 32 giường (WC)",
+      "Limousine 34 giường (mới)"
+    ],
+    "min_price": 45000,
+    "max_price": 810000
+  },
+  {
+    "name": "Tân Aba",
+    "n_trips": 721,
+    "n_routes": 16,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaiPhong → HCM",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ",
+      "Limousine 22 phòng (WC)"
+    ],
+    "min_price": 1350000,
+    "max_price": 2400000
+  },
+  {
+    "name": "Hoàng Hà (Phú Thọ)",
+    "n_trips": 714,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 29 chỗ",
+      "Giường nằm 44 chỗ",
+      "Limousine 12 chỗ",
+      "Limousine giường nằm 34 chỗ"
+    ],
+    "min_price": 230000,
+    "max_price": 410000
+  },
+  {
+    "name": "Hải Vân Travel",
+    "n_trips": 629,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "VIP Limousine 9 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 250000
+  },
+  {
+    "name": "Vip Phương Huy Luxury",
+    "n_trips": 615,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 240000,
+    "max_price": 260000
+  },
+  {
+    "name": "G8 SAPA OPEN TOUR",
+    "n_trips": 607,
+    "n_routes": 13,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "HaGiang → HaNoi",
+      "HaGiang → Hue",
+      "HaGiang → SaPa",
+      "HaNoi → DaNang",
+      "HaNoi → HaGiang",
+      "HaNoi → Hue",
+      "HaNoi → SaPa",
+      "Hue → DaNang",
+      "Hue → HaGiang",
+      "Hue → HaNoi",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 28 chỗ VIP",
+      "Limousine giường 22 chỗ",
+      "Limousine giường 24 chỗ"
+    ],
+    "min_price": 10000,
+    "max_price": 1250000
+  },
+  {
+    "name": "HM Happycar",
+    "n_trips": 569,
+    "n_routes": 12,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → Hue",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "Hue → DaLat",
+      "Hue → DaNang",
+      "Hue → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Cabin 22 phòng",
+      "Limousine 22 phòng (Kim Long)",
+      "Limousine 24 phòng",
+      "Limousine 24 phòng (Kim Long)",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 160000,
+    "max_price": 950000
+  },
+  {
+    "name": "Phi Hùng Luxury",
+    "n_trips": 561,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe KIA 7 chỗ",
+      "Xe KIA Carnival 6 chỗ",
+      "Xe VINFAST VF8"
+    ],
+    "min_price": 180000,
+    "max_price": 300000
+  },
+  {
+    "name": "Anh Huy Đất Cảng",
+    "n_trips": 524,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 45 chỗ",
+      "Ghế ngồi 45 chỗ (Thường)",
+      "Limousine 11 chỗ "
+    ],
+    "min_price": 20000,
+    "max_price": 250000
+  },
+  {
+    "name": "Hải Phòng Travel (Đất Cảng)",
+    "n_trips": 520,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 27 chỗ",
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 260000
+  },
+  {
+    "name": "Thành Travel Car",
+    "n_trips": 516,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 180000,
+    "max_price": 350000
+  },
+  {
+    "name": "Thuận Phát Limousine",
+    "n_trips": 497,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ",
+      "Xe 7 chỗ "
+    ],
+    "min_price": 129000,
+    "max_price": 350000
+  },
+  {
+    "name": "Kết Đoàn Bus",
+    "n_trips": 493,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ "
+    ],
+    "min_price": 170000,
+    "max_price": 170000
+  },
+  {
+    "name": "Tân Kim Chi",
+    "n_trips": 473,
+    "n_routes": 6,
+    "routes": [
+      "DaLat → DaNang",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "HCM → DaNang",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 32 chỗ (WC)",
+      "Limousine giường nằm 36 chỗ ",
+      "Limousine giường phòng 22 chỗ (CABIN) (WC)",
+      "Limousine giường phòng 24 chỗ (CABIN)"
+    ],
+    "min_price": 500000,
+    "max_price": 950000
+  },
+  {
+    "name": "Khanh Phong",
+    "n_trips": 466,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → NhaTrang",
+      "HCM → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 20 giường phòng (WC)",
+      "Limousine 32 giường nằm (WC)",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 40000,
+    "max_price": 850000
+  },
+  {
+    "name": "Sao Việt",
+    "n_trips": 449,
+    "n_routes": 4,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang",
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 36 chỗ (WC)",
+      "Limousine giường phòng 21 chỗ (WC Hồng)",
+      "Limousine giường phòng 21 chỗ (WC)"
+    ],
+    "min_price": 330000,
+    "max_price": 520000
+  },
+  {
+    "name": "Khang Limousine",
+    "n_trips": 424,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 160000,
+    "max_price": 160000
+  },
+  {
+    "name": "Nguyễn Gia Limousine (Hải Phòng)",
+    "n_trips": 420,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 260000
+  },
+  {
+    "name": "An Anh Limousine",
+    "n_trips": 418,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng WC",
+      "Limousine 24 Phòng Đôi",
+      "Limousine 34 Phòng Đơn"
+    ],
+    "min_price": 300000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Đình Nhân",
+    "n_trips": 392,
+    "n_routes": 5,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng (WC)",
+      "Limousine 32 Phòng (WC)"
+    ],
+    "min_price": 450000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Hiền Phước",
+    "n_trips": 378,
+    "n_routes": 8,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → NhaTrang",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 550000,
+    "max_price": 1350000
+  },
+  {
+    "name": "Phong Phú",
+    "n_trips": 373,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng đôi"
+    ],
+    "min_price": 50000,
+    "max_price": 850000
+  },
+  {
+    "name": "Như Ý 78 (Phú Yên)",
+    "n_trips": 328,
+    "n_routes": 1,
+    "routes": [
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng",
+      "Limousine 34 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 450000
+  },
+  {
+    "name": "Thanh Bình 7 Car",
+    "n_trips": 327,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 180000,
+    "max_price": 350000
+  },
+  {
+    "name": "VietNam Explore",
+    "n_trips": 318,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → NhaTrang",
+      "DaNang → Hue",
+      "Hue → DaNang",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ",
+      "Limousine 11 chỗ "
+    ],
+    "min_price": 300000,
+    "max_price": 490000
+  },
+  {
+    "name": "Daiichi Travel",
+    "n_trips": 311,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limo Green 6 chỗ ",
+      "Limousine 11 chỗ",
+      "Limousine 34 chỗ",
+      "Sơ đồ 45 (Chuẩn)"
+    ],
+    "min_price": 30000,
+    "max_price": 340000
+  },
+  {
+    "name": "Bình Minh Tải",
+    "n_trips": 305,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng Luxury",
+      "Limousine 22 Phòng Đôi VIP (WC)",
+      "Limousine 32 Phòng VIP (WC)"
+    ],
+    "min_price": 45000,
+    "max_price": 1150000
+  },
+  {
+    "name": "Dũng Car",
+    "n_trips": 299,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 90000,
+    "max_price": 350000
+  },
+  {
+    "name": "Long Vân Limousine",
+    "n_trips": 296,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine phòng đôi 22 chỗ (WC)"
+    ],
+    "min_price": 105000,
+    "max_price": 350000
+  },
+  {
+    "name": "Quang Dũng VIP Limousine",
+    "n_trips": 294,
+    "n_routes": 17,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → Hue",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → DaLat",
+      "Hue → HCM",
+      "Hue → HaNoi",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường phòng 32 chỗ (Có WC)",
+      "Limousine 22 phòng (Có WC)"
+    ],
+    "min_price": 500000,
+    "max_price": 1200000
+  },
+  {
+    "name": "Hoàng Phương Limousine (Hải Phòng)",
+    "n_trips": 293,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 250000
+  },
+  {
+    "name": "Minh Châu Luxury",
+    "n_trips": 291,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Vinfast Limo Green 6 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 160000
+  },
+  {
+    "name": "Rin Hà Travel Car",
+    "n_trips": 287,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Vinfast Limo Green 6 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Kết Đoàn",
+    "n_trips": 278,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ "
+    ],
+    "min_price": 170000,
+    "max_price": 170000
+  },
+  {
+    "name": "Hoàng Long (Đỏ)",
+    "n_trips": 276,
+    "n_routes": 14,
+    "routes": [
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HCM → SaPa",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → HCM",
+      "HaiPhong → Hue",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue",
+      "SaPa → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 42 chỗ"
+    ],
+    "min_price": 900000,
+    "max_price": 1900000
+  },
+  {
+    "name": "Mạnh Hùng",
+    "n_trips": 270,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 4x chỗ",
+      "Limousine 24 Phòng",
+      "Limousine 24 Phòng Đôi"
+    ],
+    "min_price": 420000,
+    "max_price": 1980000
+  },
+  {
+    "name": "Tân Limousine",
+    "n_trips": 268,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Fortuner 7 chỗ",
+      "Vinfast Limo Green 6 chỗ",
+      "Xe 7 chỗ Fortuner"
+    ],
+    "min_price": 20000,
+    "max_price": 250000
+  },
+  {
+    "name": "Caro Luxury",
+    "n_trips": 257,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 6 chỗ"
+    ],
+    "min_price": 160000,
+    "max_price": 280000
+  },
+  {
+    "name": "Huỳnh Gia",
+    "n_trips": 257,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ (WC)",
+      "Giường nằm 38 chỗ (WC)",
+      "Limousine 21 phòng (WC)"
+    ],
+    "min_price": 20000,
+    "max_price": 550000
+  },
+  {
+    "name": "Hoàng Phú Limousine",
+    "n_trips": 253,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 380000
+  },
+  {
+    "name": "Hoàng Long Limousine",
+    "n_trips": 240,
+    "n_routes": 9,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaiPhong → HCM",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 giường",
+      "Limousine 22 Phòng (WC)"
+    ],
+    "min_price": 150000,
+    "max_price": 2000000
+  },
+  {
+    "name": "Anh Tùng Limousine",
+    "n_trips": 234,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 350000
+  },
+  {
+    "name": "Phượng Trang Open Bus",
+    "n_trips": 230,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 350000
+  },
+  {
+    "name": "Kết Đoàn Travel",
+    "n_trips": 222,
+    "n_routes": 7,
+    "routes": [
+      "HaGiang → SaPa",
+      "HaNoi → SaPa",
+      "HaiPhong → HaNoi",
+      "HaiPhong → SaPa",
+      "SaPa → HaGiang",
+      "SaPa → HaNoi",
+      "SaPa → HaiPhong"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 34 chỗ",
+      "xe Cabin cung điện 22 phòng"
+    ],
+    "min_price": 350000,
+    "max_price": 900000
+  },
+  {
+    "name": "Lê Gia Travel",
+    "n_trips": 220,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Vinfast Limo Green 6 chỗ"
+    ],
+    "min_price": 10000,
+    "max_price": 10000
+  },
+  {
+    "name": "Khang Thịnh",
+    "n_trips": 217,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 4x chỗ",
+      "Limousine 24 Phòng Đôi",
+      "Limousine 34 phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 1400000
+  },
+  {
+    "name": "Tùng Lê Car",
+    "n_trips": 214,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Limo Green 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Hải Vân Limousine (xehue.vn)",
+    "n_trips": 210,
+    "n_routes": 1,
+    "routes": [
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "7 chỗ thường",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 230000,
+    "max_price": 250000
+  },
+  {
+    "name": "Quang Nghị",
+    "n_trips": 209,
+    "n_routes": 6,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaGiang → HaiPhong",
+      "HaGiang → SaPa",
+      "HaNoi → HaGiang",
+      "HaiPhong → HaGiang",
+      "SaPa → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 21 chỗ",
+      "Limousine 14 chỗ VIP",
+      "Limousine 16 chỗ VIP",
+      "Limousine 19 chỗ",
+      "Limousine giường nằm 34 chỗ",
+      "Limousine giường phòng 22 chỗ",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 550000
+  },
+  {
+    "name": "FUTA HÀ SƠN",
+    "n_trips": 203,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 24 chỗ",
+      "Limousine 34 chỗ",
+      "Xe Limousine 34 Cabin"
+    ],
+    "min_price": 10000,
+    "max_price": 780000
+  },
+  {
+    "name": "Nhật Dương - Bình Minh Bus",
+    "n_trips": 202,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng Đôi Luxury (WC)",
+      "Limousine phòng 21 đôi (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 850000
+  },
+  {
+    "name": "Tuấn Tú Express",
+    "n_trips": 196,
+    "n_routes": 3,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ",
+      "Limousine 24 Phòng Đôi",
+      "Luxury 34 phòng"
+    ],
+    "min_price": 350000,
+    "max_price": 850000
+  },
+  {
+    "name": "HTX Sài Gòn",
+    "n_trips": 189,
+    "n_routes": 15,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaiPhong",
+      "HCM → DaNang",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → HCM",
+      "HaiPhong → Hue",
+      "HaiPhong → NhaTrang",
+      "Hue → HCM",
+      "Hue → HaiPhong",
+      "Hue → NhaTrang",
+      "NhaTrang → HCM",
+      "NhaTrang → HaiPhong",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 650000,
+    "max_price": 1400000
+  },
+  {
+    "name": "Lữ Hành Quỳnh Thanh",
+    "n_trips": 188,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 130000,
+    "max_price": 130000
+  },
+  {
+    "name": "Xuân Minh",
+    "n_trips": 185,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Limo Green 7 chỗ "
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Bằng Phấn",
+    "n_trips": 184,
+    "n_routes": 7,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaGiang → HaiPhong",
+      "HaGiang → SaPa",
+      "HaNoi → HaGiang",
+      "HaiPhong → HaGiang",
+      "HaiPhong → HaNoi",
+      "SaPa → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 36 chỗ",
+      "Giường nằm 44 chỗ",
+      "Khách sạn di động 34 phòng đơn",
+      "Limousine 13 chỗ",
+      "xe Cabin cung điện 24 phòng"
+    ],
+    "min_price": 15000,
+    "max_price": 650000
+  },
+  {
+    "name": "An Bình (Thái Bình)",
+    "n_trips": 179,
+    "n_routes": 12,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → Hue",
+      "HaNoi → HCM",
+      "HaNoi → NhaTrang",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Limousine Giường Phòng 32 Chỗ",
+      "Limousine giường phòng 22 chỗ"
+    ],
+    "min_price": 700000,
+    "max_price": 2650000
+  },
+  {
+    "name": "Thuận Hưng Travel",
+    "n_trips": 168,
+    "n_routes": 5,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 24 cabin",
+      "Limousine 24 cabin đơn ",
+      "Limousine 34 Phòng"
+    ],
+    "min_price": 20000,
+    "max_price": 1150000
+  },
+  {
+    "name": "Đức Tuấn Travel",
+    "n_trips": 168,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine ghế ngồi 7 chỗ"
+    ],
+    "min_price": 230000,
+    "max_price": 350000
+  },
+  {
+    "name": "Bốn Luyện Express",
+    "n_trips": 162,
+    "n_routes": 8,
+    "routes": [
+      "DaLat → HCM",
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaLat",
+      "HCM → DaNang",
+      "HCM → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ Luxury",
+      "Limousine 24 Phòng",
+      "Limousine 24 Phòng Đôi"
+    ],
+    "min_price": 130000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Toàn Xe Ghép",
+    "n_trips": 157,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 Chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Việt Luxury Travel",
+    "n_trips": 152,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ "
+    ],
+    "min_price": 150000,
+    "max_price": 180000
+  },
+  {
+    "name": "Duy Hùng Travel",
+    "n_trips": 149,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 Chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 200000
+  },
+  {
+    "name": "Hoàng Long Happy Car",
+    "n_trips": 148,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 Chỗ "
+    ],
+    "min_price": 130000,
+    "max_price": 130000
+  },
+  {
+    "name": "Bảo Châu Car",
+    "n_trips": 147,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Fortuner 7 chỗ"
+    ],
+    "min_price": 159000,
+    "max_price": 159000
+  },
+  {
+    "name": "Duy Khánh Limousine",
+    "n_trips": 143,
+    "n_routes": 9,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "HaNoi → DaNang",
+      "HaNoi → HaiPhong",
+      "HaNoi → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → Hue",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Cabin đôi 24 phòng",
+      "Limousine 11 chỗ "
+    ],
+    "min_price": 250000,
+    "max_price": 1245000
+  },
+  {
+    "name": "Hưng Thịnh Phát Limousine",
+    "n_trips": 141,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ VIP"
+    ],
+    "min_price": 160000,
+    "max_price": 160000
+  },
+  {
+    "name": "Đức Hải Car",
+    "n_trips": 141,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limo Green 7 Chỗ "
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Go365",
+    "n_trips": 138,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → NhaTrang",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ",
+      "Luxury Dcar 9 Ghế",
+      "Xe Gaz 16 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 170000
+  },
+  {
+    "name": "Cúc Tùng Limousine",
+    "n_trips": 135,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → NhaTrang",
+      "DaNang → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ",
+      "Limousine giường nằm 21 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 560000
+  },
+  {
+    "name": "Xuân Minh Travel",
+    "n_trips": 135,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Limo Green 7 chỗ "
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Hoàng Long (Bắc - Trung - Nam)",
+    "n_trips": 134,
+    "n_routes": 6,
+    "routes": [
+      "HCM → HaNoi",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 950000,
+    "max_price": 1300000
+  },
+  {
+    "name": "Thảo Mạnh Hùng",
+    "n_trips": 134,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 4x chỗ",
+      "Limousine 22 Phòng Đôi",
+      "Limousine 22 Phòng Đơn",
+      "Limousine 22 Phòng Đơn/Đôi"
+    ],
+    "min_price": 410000,
+    "max_price": 1660000
+  },
+  {
+    "name": "Pháp Car Travel",
+    "n_trips": 128,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Quang Hạnh (NT)",
+    "n_trips": 126,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → NhaTrang",
+      "HCM → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng đơn (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 740000
+  },
+  {
+    "name": "Bôn Lê Car",
+    "n_trips": 126,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Limo Green 6 chỗ"
+    ],
+    "min_price": 160000,
+    "max_price": 160000
+  },
+  {
+    "name": "Văn Pháp",
+    "n_trips": 125,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limo Green"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Vũ Hán Group",
+    "n_trips": 123,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 45 chỗ",
+      "Giường nằm 20 chỗ"
+    ],
+    "min_price": 210000,
+    "max_price": 500000
+  },
+  {
+    "name": "Phúc An Express",
+    "n_trips": 120,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 giường phòng (WC)",
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 330000,
+    "max_price": 850000
+  },
+  {
+    "name": "Hiếu Vinh",
+    "n_trips": 110,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 550000
+  },
+  {
+    "name": "Xuân Quỳnh",
+    "n_trips": 108,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Kia Sedona 6 chỗ ",
+      "Vip Limo 7 Chỗ (chở 6 khách)"
+    ],
+    "min_price": 280000,
+    "max_price": 350000
+  },
+  {
+    "name": "Tiến Oanh",
+    "n_trips": 103,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng (WC)"
+    ],
+    "min_price": 20000,
+    "max_price": 900000
+  },
+  {
+    "name": "Hoàng Long (Thanh Tùng)",
+    "n_trips": 102,
+    "n_routes": 14,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → NhaTrang",
+      "Hue → HaNoi",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 700000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Camel Travel",
+    "n_trips": 102,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → DaNang",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 giường",
+      "Limousine 32 giường",
+      "Limousine 32 giường phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Thủy Ngân",
+    "n_trips": 102,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng VIP (WC)"
+    ],
+    "min_price": 650000,
+    "max_price": 1500000
+  },
+  {
+    "name": "Hoàng Long Hải Vân",
+    "n_trips": 102,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HCM → HaNoi",
+      "HaNoi → HCM",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 750000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Eco Sapa Limousine",
+    "n_trips": 99,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 10 chỗ",
+      "Limousine 10 chỗ (new)"
+    ],
+    "min_price": 430000,
+    "max_price": 590000
+  },
+  {
+    "name": "Cát Thiên Hải Limousine",
+    "n_trips": 99,
+    "n_routes": 3,
+    "routes": [
+      "DaLat → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Hyundai Custin 6 chỗ",
+      "Limousine 12 chỗ Massage",
+      "Limousine 9 chỗ Vip",
+      "Limousine giường nằm 20 chỗ",
+      "Xe 16 chỗ",
+      "Xe 16 chỗ ghế Âu",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 199000,
+    "max_price": 709000
+  },
+  {
+    "name": "Tùng Tuấn Limousine",
+    "n_trips": 96,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 250000
+  },
+  {
+    "name": "Quang Tuyến (Hà Giang)",
+    "n_trips": 94,
+    "n_routes": 6,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaGiang → HaiPhong",
+      "HaGiang → SaPa",
+      "HaNoi → HaGiang",
+      "HaiPhong → HaGiang",
+      "SaPa → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 18 chỗ",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 600000
+  },
+  {
+    "name": "Trọng Minh",
+    "n_trips": 93,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 21 phòng (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 550000
+  },
+  {
+    "name": "Cửa Ông Limousine",
+    "n_trips": 92,
+    "n_routes": 10,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → Hue",
+      "Hue → DaNang",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 300000,
+    "max_price": 850000
+  },
+  {
+    "name": "HAV Limousine",
+    "n_trips": 90,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Fortune 7 chỗ",
+      "Limousine 9 chỗ VIP"
+    ],
+    "min_price": 190000,
+    "max_price": 200000
+  },
+  {
+    "name": "Vĩnh Thiện",
+    "n_trips": 90,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 22 chỗ",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Tài Phát Limousine",
+    "n_trips": 88,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng Đôi"
+    ],
+    "min_price": 50000,
+    "max_price": 400000
+  },
+  {
+    "name": "The Queen Tourist",
+    "n_trips": 84,
+    "n_routes": 11,
+    "routes": [
+      "DaLat → DaNang",
+      "DaNang → DaLat",
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "Hue → DaLat",
+      "Hue → DaNang",
+      "Hue → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng",
+      "Limousine 32 chỗ",
+      "Limousine 34 chỗ"
+    ],
+    "min_price": 205000,
+    "max_price": 910000
+  },
+  {
+    "name": "Cát Bà Luxury",
+    "n_trips": 84,
+    "n_routes": 7,
+    "routes": [
+      "HaGiang → HaiPhong",
+      "HaNoi → HaiPhong",
+      "HaNoi → SaPa",
+      "HaiPhong → HaGiang",
+      "HaiPhong → HaNoi",
+      "HaiPhong → SaPa",
+      "SaPa → HaiPhong"
+    ],
+    "veh_types": [
+      "Cabin 26 phòng",
+      "Limousine 11 chỗ",
+      "Limousine 9 chỗ",
+      "Xe 45 chỗ"
+    ],
+    "min_price": 330000,
+    "max_price": 850000
+  },
+  {
+    "name": "Hạnh Cafe - Hà Phương Limousine",
+    "n_trips": 82,
+    "n_routes": 12,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HCM → NhaTrang",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 36 chỗ",
+      "Limousine 34 Giường"
+    ],
+    "min_price": 200000,
+    "max_price": 1030000
+  },
+  {
+    "name": "An Phú Travel (Đà Lạt)",
+    "n_trips": 82,
+    "n_routes": 6,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng Đôi (WC)",
+      "Limousine 24 Phòng Đôi (xe đi thẳng cao tốc)"
+    ],
+    "min_price": 50000,
+    "max_price": 900000
+  },
+  {
+    "name": "Queen Cafe",
+    "n_trips": 81,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 32 buồng",
+      "Giường nằm 38 chỗ WC",
+      "Limousine 22 phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 900000
+  },
+  {
+    "name": "SaPa Explore",
+    "n_trips": 81,
+    "n_routes": 10,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → SaPa",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaNoi → SaPa",
+      "Hue → HaNoi",
+      "Hue → SaPa",
+      "SaPa → DaNang",
+      "SaPa → HaNoi",
+      "SaPa → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 36 chỗ (mới )",
+      "Giường nằm 41 chỗ",
+      "Limousine giường phòng 24 chỗ",
+      "Xe 34 Cabin VIP"
+    ],
+    "min_price": 280000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Ngọc Phát",
+    "n_trips": 81,
+    "n_routes": 16,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → NhaTrang",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 630000,
+    "max_price": 1920000
+  },
+  {
+    "name": "An Bình (Quảng Bình)",
+    "n_trips": 81,
+    "n_routes": 10,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine 22 cabin (WC)"
+    ],
+    "min_price": 1000000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Bảo Ngọc",
+    "n_trips": 80,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 22 chỗ (WC)",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 100000,
+    "max_price": 100000
+  },
+  {
+    "name": "A Ba",
+    "n_trips": 78,
+    "n_routes": 7,
+    "routes": [
+      "DaNang → HaNoi",
+      "HCM → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "Hue → HaNoi",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 42 chỗ "
+    ],
+    "min_price": 1000000,
+    "max_price": 1400000
+  },
+  {
+    "name": "Minh Phương (MP Bus)",
+    "n_trips": 76,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng (WC)",
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 700000,
+    "max_price": 880000
+  },
+  {
+    "name": "Trà Lan Viên",
+    "n_trips": 74,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 21 Phòng Đơn (WC)",
+      "Limousine 30 Phòng Đơn (WC)",
+      "Limousine 36 Phòng Đơn (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 800000
+  },
+  {
+    "name": "Điều Hòa",
+    "n_trips": 74,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng (WC)",
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 51000,
+    "max_price": 450000
+  },
+  {
+    "name": "Thành Phát Travel Car",
+    "n_trips": 73,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "LH Minh Trí Limousine",
+    "n_trips": 73,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → HCM",
+      "DaLat → NhaTrang",
+      "HCM → DaLat",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine Solati 9 chỗ"
+    ],
+    "min_price": 230000,
+    "max_price": 650000
+  },
+  {
+    "name": "TH Travel",
+    "n_trips": 72,
+    "n_routes": 5,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 24 cabin",
+      "Limousine 24 cabin đơn",
+      "Limousine 34 Phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 1150000
+  },
+  {
+    "name": "Hoàng Long 36",
+    "n_trips": 72,
+    "n_routes": 12,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "HCM → DaNang",
+      "HCM → HaNoi",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang",
+      "Hue → HCM",
+      "Hue → HaNoi",
+      "NhaTrang → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 850000,
+    "max_price": 1300000
+  },
+  {
+    "name": "Quốc Gia (Quảng Trị)",
+    "n_trips": 72,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng"
+    ],
+    "min_price": 1600000,
+    "max_price": 1600000
+  },
+  {
+    "name": "King Express Bus",
+    "n_trips": 72,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → SaPa",
+      "HaNoi → SaPa",
+      "Hue → SaPa",
+      "SaPa → DaNang",
+      "SaPa → HaNoi",
+      "SaPa → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Limousine VIP 20 Cabin"
+    ],
+    "min_price": 250000,
+    "max_price": 1180000
+  },
+  {
+    "name": "G8 OPEN TOUR",
+    "n_trips": 72,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 28 chỗ VIP"
+    ],
+    "min_price": 400000,
+    "max_price": 500000
+  },
+  {
+    "name": "Hoàng Long (Quảng Ninh)",
+    "n_trips": 72,
+    "n_routes": 2,
+    "routes": [
+      "HCM → HaNoi",
+      "HaNoi → HCM"
+    ],
+    "veh_types": [
+      "Sơ đồ giường nằm 40 chỗ "
+    ],
+    "min_price": 1100000,
+    "max_price": 1100000
+  },
+  {
+    "name": "GoroTrip Limousine VIP",
+    "n_trips": 72,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → NhaTrang",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 12 Dcar ",
+      "Limousine 12 chỗ",
+      "Limousine 9 chỗ",
+      "Limousine Dcar 9 Chỗ ",
+      "Luxury 15 chỗ",
+      "Xe 7 chỗ"
+    ],
+    "min_price": 180000,
+    "max_price": 350000
+  },
+  {
+    "name": "Trọng Thủy Travel",
+    "n_trips": 72,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → NhaTrang",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 10 chỗ",
+      "Limousine 29 chỗ VIP (Massage)"
+    ],
+    "min_price": 280000,
+    "max_price": 340000
+  },
+  {
+    "name": "Văn Khánh",
+    "n_trips": 71,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ Fortuner",
+      "Xe 7 chỗ Limogreen"
+    ],
+    "min_price": 140000,
+    "max_price": 140000
+  },
+  {
+    "name": "Phúc Yên",
+    "n_trips": 71,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ",
+      "Limousine 24 phòng",
+      "Limousine 34 phòng"
+    ],
+    "min_price": 250000,
+    "max_price": 870000
+  },
+  {
+    "name": "Thanh Thủy - Đà Lạt",
+    "n_trips": 70,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → DaNang",
+      "DaNang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng",
+      "Limousine 34 giường"
+    ],
+    "min_price": 500000,
+    "max_price": 700000
+  },
+  {
+    "name": "Minh Nghĩa",
+    "n_trips": 70,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      " Limousine 8 chỗ "
+    ],
+    "min_price": 500000,
+    "max_price": 650000
+  },
+  {
+    "name": "Quốc Bảo",
+    "n_trips": 68,
+    "n_routes": 6,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → Hue",
+      "DaNang → DaLat",
+      "DaNang → Hue",
+      "Hue → DaLat",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 34 Phòng VIP"
+    ],
+    "min_price": 400000,
+    "max_price": 570000
+  },
+  {
+    "name": "Thành Thuỷ (Huế)",
+    "n_trips": 68,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "VIP Limousine 9 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 300000
+  },
+  {
+    "name": "S Trip Việt Nam",
+    "n_trips": 68,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Cabin 24 Phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 530000
+  },
+  {
+    "name": "Quang Dũng TQĐ",
+    "n_trips": 66,
+    "n_routes": 7,
+    "routes": [
+      "DaNang → HaiPhong",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → Hue",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Giường nằm 32 phòng",
+      "Giường nằm VIP 20 phòng (WC)"
+    ],
+    "min_price": 500000,
+    "max_price": 850000
+  },
+  {
+    "name": "Đà Lạt ơi",
+    "n_trips": 65,
+    "n_routes": 3,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng ĐÔI"
+    ],
+    "min_price": 50000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Ngọc Limousine",
+    "n_trips": 63,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 9  chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 200000
+  },
+  {
+    "name": "Trung Kiên (Hải Dương)",
+    "n_trips": 63,
+    "n_routes": 4,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaNoi → SaPa",
+      "SaPa → HaNoi",
+      "SaPa → HaiPhong"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Phương Travel Car",
+    "n_trips": 62,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 180000,
+    "max_price": 180000
+  },
+  {
+    "name": "Phi Hiệp",
+    "n_trips": 60,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Limouisne 34 phòng",
+      "Limousine 24 phòng"
+    ],
+    "min_price": 560000,
+    "max_price": 800000
+  },
+  {
+    "name": "Thanh Bình Hải Âu",
+    "n_trips": 60,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ"
+    ],
+    "min_price": 120000,
+    "max_price": 120000
+  },
+  {
+    "name": "Quỳnh Nhật",
+    "n_trips": 57,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → HaNoi",
+      "HCM → DaNang",
+      "HCM → NhaTrang",
+      "HaNoi → DaNang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng",
+      "Limousine 24 phòng - 1",
+      "Limousine 24 phòng - 2"
+    ],
+    "min_price": 400000,
+    "max_price": 750000
+  },
+  {
+    "name": "Nam Hải Limousine",
+    "n_trips": 57,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 giường",
+      "Limousine 22 phòng (có WC)",
+      "Limousine 24 phòng",
+      "Limousine 34 giường"
+    ],
+    "min_price": 30000,
+    "max_price": 850000
+  },
+  {
+    "name": "Phước Luxury Car",
+    "n_trips": 56,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 140000,
+    "max_price": 140000
+  },
+  {
+    "name": "Mộc Thảo",
+    "n_trips": 56,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 giường",
+      "Limousine 34 giường"
+    ],
+    "min_price": 350000,
+    "max_price": 880000
+  },
+  {
+    "name": "Trọng Thủy Limousine",
+    "n_trips": 55,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng Đôi"
+    ],
+    "min_price": 550000,
+    "max_price": 1150000
+  },
+  {
+    "name": "Phi Long (Bảo Trân)",
+    "n_trips": 54,
+    "n_routes": 8,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 43 chỗ"
+    ],
+    "min_price": 550000,
+    "max_price": 550000
+  },
+  {
+    "name": "Hue Happy Travel",
+    "n_trips": 54,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 7 chỗ"
+    ],
+    "min_price": 275000,
+    "max_price": 450000
+  },
+  {
+    "name": "Golden Eagle Travel",
+    "n_trips": 54,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 28 chỗ VIP"
+    ],
+    "min_price": 450000,
+    "max_price": 500000
+  },
+  {
+    "name": "Bảo Lâm",
+    "n_trips": 54,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "xe Cabin 24 phòng"
+    ],
+    "min_price": 700000,
+    "max_price": 700000
+  },
+  {
+    "name": "Phương Anh (Phú Yên)",
+    "n_trips": 53,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ VIP",
+      "Limousine 24 phòng"
+    ],
+    "min_price": 350000,
+    "max_price": 870000
+  },
+  {
+    "name": "Phú Quý Buslines",
+    "n_trips": 53,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 46C",
+      "Luxury 34 Phòng"
+    ],
+    "min_price": 439000,
+    "max_price": 579000
+  },
+  {
+    "name": "Việt Tân",
+    "n_trips": 52,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "HaNoi → DaNang",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 650000,
+    "max_price": 750000
+  },
+  {
+    "name": "Quốc Phương Car",
+    "n_trips": 52,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Hà Linh",
+    "n_trips": 50,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ (WC)",
+      "Limousine 22 Phòng ",
+      "Limousine 24 Phòng - Không WC",
+      "Limousine 32 Phòng Đơn (WC)",
+      "Limousine 34 Giường (rèm - không WC)"
+    ],
+    "min_price": 350000,
+    "max_price": 850000
+  },
+  {
+    "name": "Phú Bình (Quảng Ninh)",
+    "n_trips": 49,
+    "n_routes": 1,
+    "routes": [
+      "HaNoi → HaiPhong"
+    ],
+    "veh_types": [
+      "Ghế ngồi 7 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 200000
+  },
+  {
+    "name": "Thắng Pho",
+    "n_trips": 48,
+    "n_routes": 8,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → HaNoi",
+      "DaLat → Hue",
+      "DaLat → NhaTrang",
+      "HaNoi → DaLat",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaNoi → NhaTrang"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 300000,
+    "max_price": 800000
+  },
+  {
+    "name": "Cát Bà Express",
+    "n_trips": 48,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 34 chỗ",
+      "Limousine 31 Chỗ "
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Sapa Dragon Express",
+    "n_trips": 48,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ ",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 280000,
+    "max_price": 350000
+  },
+  {
+    "name": "Thanh Thuỷ - Quảng Ngãi",
+    "n_trips": 48,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng ",
+      "Limousine 34 Phòng Đơn"
+    ],
+    "min_price": 550000,
+    "max_price": 900000
+  },
+  {
+    "name": "Kumho Samco",
+    "n_trips": 48,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 33 phòng đơn"
+    ],
+    "min_price": 290000,
+    "max_price": 290000
+  },
+  {
+    "name": "Green Bus (Quảng Ninh)",
+    "n_trips": 47,
+    "n_routes": 8,
+    "routes": [
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HaNoi → HaiPhong",
+      "HaiPhong → DaNang",
+      "HaiPhong → HaNoi",
+      "HaiPhong → Hue",
+      "Hue → DaNang",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Limousine 10 chỗ",
+      "Xe 24 cabin đôi"
+    ],
+    "min_price": 20000,
+    "max_price": 580000
+  },
+  {
+    "name": "Subin Car Luxury",
+    "n_trips": 45,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Hoàng Trí Luxury",
+    "n_trips": 45,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Fortuner 7 chỗ"
+    ],
+    "min_price": 180000,
+    "max_price": 180000
+  },
+  {
+    "name": "Băng Như TL",
+    "n_trips": 43,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe Limo Green 7 chỗ"
+    ],
+    "min_price": 154000,
+    "max_price": 154000
+  },
+  {
+    "name": "Quang Giang (Hà Giang)",
+    "n_trips": 43,
+    "n_routes": 4,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaGiang → SaPa",
+      "HaNoi → HaGiang",
+      "SaPa → HaGiang"
+    ],
+    "veh_types": [
+      "Cabin 22 phòng",
+      "Cabin 24 phòng",
+      "Cabin 34 phòng đơn",
+      "Limousine 20 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 450000
+  },
+  {
+    "name": "Dương Vũ",
+    "n_trips": 42,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "HaNoi → DaNang",
+      "HaiPhong → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 43 chỗ",
+      "Giường nằm 44 chỗ",
+      "Giường nằm 46 chỗ",
+      "Limousine 24 phòng",
+      "Limousine 24 phòng VIP"
+    ],
+    "min_price": 450000,
+    "max_price": 700000
+  },
+  {
+    "name": "Phan Khánh",
+    "n_trips": 42,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng",
+      "Limousine 34 phòng đơn"
+    ],
+    "min_price": 195000,
+    "max_price": 949000
+  },
+  {
+    "name": "Quang Hạnh",
+    "n_trips": 42,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → NhaTrang",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng đơn (WC)",
+      "Limousine 32 giường (WC)"
+    ],
+    "min_price": 420000,
+    "max_price": 600000
+  },
+  {
+    "name": "Phúc Lâm Limousine",
+    "n_trips": 42,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 450000,
+    "max_price": 585000
+  },
+  {
+    "name": "Xe Nhà",
+    "n_trips": 42,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ (WC)",
+      "Limousine 20 phòng đơn (WC)"
+    ],
+    "min_price": 30000,
+    "max_price": 880000
+  },
+  {
+    "name": "Mạnh Quân",
+    "n_trips": 40,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Cabin cung điện 24 phòng",
+      "Cabin cung điện 24 phòng (VIP)"
+    ],
+    "min_price": 350000,
+    "max_price": 550000
+  },
+  {
+    "name": "Đăng Quang (Hà Giang)",
+    "n_trips": 39,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 24 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Cửa Ông Bus",
+    "n_trips": 37,
+    "n_routes": 10,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → Hue",
+      "Hue → DaNang",
+      "Hue → HaNoi",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 300000,
+    "max_price": 800000
+  },
+  {
+    "name": "Hà Linh NT",
+    "n_trips": 37,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → NhaTrang",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng Đơn",
+      "Limousine 32 Phòng Đơn (WC)",
+      "Limousine 34 Giường (rèm - không WC)"
+    ],
+    "min_price": 410000,
+    "max_price": 700000
+  },
+  {
+    "name": "Hùng Ban",
+    "n_trips": 37,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → DaNang",
+      "DaNang → DaLat",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 34 chỗ"
+    ],
+    "min_price": 550000,
+    "max_price": 650000
+  },
+  {
+    "name": "Tư Tiến",
+    "n_trips": 37,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng Đôi"
+    ],
+    "min_price": 60000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Đất Mới Limousine VIP",
+    "n_trips": 37,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → NhaTrang",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 230000,
+    "max_price": 270000
+  },
+  {
+    "name": "Hoàng Long (Cô 2)",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HCM → HaNoi",
+      "HaNoi → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 1200000,
+    "max_price": 1200000
+  },
+  {
+    "name": "Hoàng Long A Bờm",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HCM → HaNoi",
+      "HaNoi → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 38 chỗ"
+    ],
+    "min_price": 1200000,
+    "max_price": 1200000
+  },
+  {
+    "name": "Ngọc Sơn (Hà Giang)",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Limousine 24 cabin"
+    ],
+    "min_price": 300000,
+    "max_price": 400000
+  },
+  {
+    "name": "Hà Giang Epic",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 13 chỗ VIP"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Minh Mập Luxury",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 22 cabin",
+      "Limousine giường nằm 32 chỗ"
+    ],
+    "min_price": 450000,
+    "max_price": 600000
+  },
+  {
+    "name": "Tuấn Hiệp",
+    "n_trips": 36,
+    "n_routes": 3,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Limousine giường nằm 36 chỗ",
+      "Limousine phòng đôi 24 chỗ"
+    ],
+    "min_price": 500000,
+    "max_price": 680000
+  },
+  {
+    "name": "Thành Lê",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Phòng nằm 24"
+    ],
+    "min_price": 500000,
+    "max_price": 500000
+  },
+  {
+    "name": "Văn Vinh (Quảng Ngãi)",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Limousine 22 Phòng",
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 700000
+  },
+  {
+    "name": "Sao Limousine",
+    "n_trips": 36,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → NhaTrang",
+      "HCM → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ",
+      "Limousine 22 phòng Luxury (WC)",
+      "Limousine 34 giường"
+    ],
+    "min_price": 310000,
+    "max_price": 480000
+  },
+  {
+    "name": "Minh Hiếu",
+    "n_trips": 36,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Giường phòng 22 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Vạn Lục Tùng",
+    "n_trips": 32,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → HaiPhong",
+      "HaNoi → DaNang",
+      "HaiPhong → DaNang"
+    ],
+    "veh_types": [
+      "Cabin 24 phòng",
+      "Limousine 34 Giường VIP"
+    ],
+    "min_price": 500000,
+    "max_price": 650000
+  },
+  {
+    "name": "The New Way",
+    "n_trips": 32,
+    "n_routes": 8,
+    "routes": [
+      "DaNang → HaiPhong",
+      "DaNang → Hue",
+      "HaNoi → HaiPhong",
+      "HaiPhong → DaNang",
+      "HaiPhong → HaNoi",
+      "HaiPhong → Hue",
+      "Hue → DaNang",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Limousine 24 cabin",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 1100000
+  },
+  {
+    "name": "Sapa Group Bus",
+    "n_trips": 31,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 cabin"
+    ],
+    "min_price": 450000,
+    "max_price": 450000
+  },
+  {
+    "name": "Văn Minh",
+    "n_trips": 30,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 21 phòng"
+    ],
+    "min_price": 850000,
+    "max_price": 850000
+  },
+  {
+    "name": "Minh Đức (Huế)",
+    "n_trips": 30,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 580000,
+    "max_price": 750000
+  },
+  {
+    "name": "TNT Travel Bus",
+    "n_trips": 30,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 21 phòng"
+    ],
+    "min_price": 45000,
+    "max_price": 350000
+  },
+  {
+    "name": "Tư Viễn",
+    "n_trips": 30,
+    "n_routes": 7,
+    "routes": [
+      "HCM → DaNang",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaiPhong → DaNang",
+      "HaiPhong → HCM",
+      "HaiPhong → Hue",
+      "HaiPhong → NhaTrang"
+    ],
+    "veh_types": [
+      "24 cabin VIP",
+      "34 cabin VIP"
+    ],
+    "min_price": 850000,
+    "max_price": 1800000
+  },
+  {
+    "name": "Tân Quang Dũng - Mến Thương",
+    "n_trips": 29,
+    "n_routes": 6,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "DaNang → NhaTrang",
+      "NhaTrang → DaLat",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 34 giường VIP new"
+    ],
+    "min_price": 200000,
+    "max_price": 500000
+  },
+  {
+    "name": "Hoàng Kim (Nha Trang)",
+    "n_trips": 29,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 Phòng (WC)"
+    ],
+    "min_price": 100000,
+    "max_price": 800000
+  },
+  {
+    "name": "Thành Nhân - Hải Phòng",
+    "n_trips": 28,
+    "n_routes": 5,
+    "routes": [
+      "HCM → HaiPhong",
+      "HaiPhong → DaNang",
+      "HaiPhong → HCM",
+      "HaiPhong → NhaTrang",
+      "NhaTrang → HaiPhong"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 1050000,
+    "max_price": 1600000
+  },
+  {
+    "name": "Hoàng Thủy",
+    "n_trips": 28,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng (WC)",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 150000,
+    "max_price": 600000
+  },
+  {
+    "name": "Mười Phương Express",
+    "n_trips": 28,
+    "n_routes": 1,
+    "routes": [
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ",
+      "Limousine 24 phòng đôi",
+      "Luxury 34 phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 1300000
+  },
+  {
+    "name": "Trung Nga (Nghệ An)",
+    "n_trips": 27,
+    "n_routes": 12,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → Hue",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "HCM → NhaTrang",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → NhaTrang",
+      "NhaTrang → DaNang",
+      "NhaTrang → HCM",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 800000
+  },
+  {
+    "name": "TNT (Thanh Hóa)",
+    "n_trips": 27,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Cabin 22 phòng đôi (WC)"
+    ],
+    "min_price": 70000,
+    "max_price": 70000
+  },
+  {
+    "name": "Bảo Hưng Limousine",
+    "n_trips": 27,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ"
+    ],
+    "min_price": 170000,
+    "max_price": 170000
+  },
+  {
+    "name": "Sapa Express",
+    "n_trips": 27,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 29 chỗ VIP",
+      "Limousine 10 chỗ",
+      "Limousine 9 chỗ",
+      "Limousine giường phòng 22 chỗ"
+    ],
+    "min_price": 380000,
+    "max_price": 460000
+  },
+  {
+    "name": "Ngân Hà",
+    "n_trips": 27,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine Giường Phòng 22 chỗ",
+      "Limousine giường nằm 34 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 500000
+  },
+  {
+    "name": "Mai Quyên",
+    "n_trips": 26,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng",
+      "Limousine 34 Phòng"
+    ],
+    "min_price": 800000,
+    "max_price": 1050000
+  },
+  {
+    "name": "Tân Hiệp",
+    "n_trips": 26,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ",
+      "Limousine 24 phòng"
+    ],
+    "min_price": 550000,
+    "max_price": 1000000
+  },
+  {
+    "name": "An Phú Buslines",
+    "n_trips": 26,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng Đơn",
+      "Limousine 34 Phòng Đơn"
+    ],
+    "min_price": 580000,
+    "max_price": 950000
+  },
+  {
+    "name": "Phương Nam",
+    "n_trips": 25,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 32 chỗ (WC)",
+      "Giường nằm 40 chỗ có toilet",
+      "Limousine giường phòng 22 chỗ (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 850000
+  },
+  {
+    "name": "Bình Hoài Limousine",
+    "n_trips": 24,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 800000,
+    "max_price": 800000
+  },
+  {
+    "name": "Xuân Hải",
+    "n_trips": 24,
+    "n_routes": 4,
+    "routes": [
+      "DaLat → DaNang",
+      "DaLat → NhaTrang",
+      "DaNang → DaLat",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Giường nằm 34 chỗ",
+      "Limousine 24 Phòng Đôi"
+    ],
+    "min_price": 70000,
+    "max_price": 700000
+  },
+  {
+    "name": "Thanh Binh 7 Car",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Xe 7 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Good morning Cát Bà",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Ghế ngồi 45 chỗ"
+    ],
+    "min_price": 330000,
+    "max_price": 330000
+  },
+  {
+    "name": "Quang Đạo",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 24 cabin (Ghép)"
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Cầu Mè",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 41 chỗ",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 300000,
+    "max_price": 350000
+  },
+  {
+    "name": "Hà Sơn (Vinh - Sapa)",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Cabin 21 khoang Vip",
+      "Limousine 34 Giường VIP"
+    ],
+    "min_price": 300000,
+    "max_price": 450000
+  },
+  {
+    "name": "Cường Phát Limousine",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      " Limousine 11 chỗ"
+    ],
+    "min_price": 460000,
+    "max_price": 460000
+  },
+  {
+    "name": "Sao Vàng Golink",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 450000,
+    "max_price": 450000
+  },
+  {
+    "name": "Thăng Long Hà Nội Limousine",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ",
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 468000,
+    "max_price": 468000
+  },
+  {
+    "name": "Phong Khánh",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 34 chỗ ",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 600000
+  },
+  {
+    "name": "HTX Thanh Sơn",
+    "n_trips": 24,
+    "n_routes": 1,
+    "routes": [
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 42 phòng"
+    ],
+    "min_price": 180000,
+    "max_price": 180000
+  },
+  {
+    "name": "Phương Anh (Phan Thiết)",
+    "n_trips": 24,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 532000,
+    "max_price": 602000
+  },
+  {
+    "name": "Bình Tâm",
+    "n_trips": 22,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ",
+      "Limousine 36 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 700000
+  },
+  {
+    "name": "Minh Mập",
+    "n_trips": 22,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 22 phòng",
+      "Limousine giường nằm 32 chỗ (WC)"
+    ],
+    "min_price": 450000,
+    "max_price": 600000
+  },
+  {
+    "name": "Phúc Xuyên",
+    "n_trips": 21,
+    "n_routes": 2,
+    "routes": [
+      "HaiPhong → SaPa",
+      "SaPa → HaiPhong"
+    ],
+    "veh_types": [
+      "Cabin 34 phòng"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Hoa Bình (Nam Ban)",
+    "n_trips": 21,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Giường 34 phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 500000
+  },
+  {
+    "name": "Tân Niên",
+    "n_trips": 21,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine Phòng Đôi 24 chỗ"
+    ],
+    "min_price": 117000,
+    "max_price": 750000
+  },
+  {
+    "name": "Happy Travel",
+    "n_trips": 20,
+    "n_routes": 1,
+    "routes": [
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 4 chỗ"
+    ],
+    "min_price": 130000,
+    "max_price": 170000
+  },
+  {
+    "name": "Thành Trung Limousine",
+    "n_trips": 19,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → Hue"
+    ],
+    "veh_types": [
+      "Limousine 24 cabin"
+    ],
+    "min_price": 300000,
+    "max_price": 950000
+  },
+  {
+    "name": "Hà Tuấn",
+    "n_trips": 19,
+    "n_routes": 4,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaNoi → SaPa",
+      "HaiPhong → HaNoi",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 24 chỗ",
+      "Sơ đồ xuất vé điện tử"
+    ],
+    "min_price": 100000,
+    "max_price": 600000
+  },
+  {
+    "name": "Thành Trung Travel",
+    "n_trips": 18,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang",
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 750000
+  },
+  {
+    "name": "Hải Vân Travel (Đà Nẵng)",
+    "n_trips": 18,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → HaNoi",
+      "DaNang → SaPa",
+      "HaNoi → DaNang",
+      "HaNoi → SaPa",
+      "SaPa → DaNang",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 22 phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 1300000
+  },
+  {
+    "name": "Bến Dầu",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Quang Dũng Opentour",
+    "n_trips": 18,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → Hue",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 700000,
+    "max_price": 700000
+  },
+  {
+    "name": "Cát Bà Limousine",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ VIP"
+    ],
+    "min_price": 450000,
+    "max_price": 450000
+  },
+  {
+    "name": "Đông Bắc Travel",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Ghế ngồi 6 chỗ",
+      "Xe Limousine 11 chỗ",
+      "Xe Limousine 16 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 450000
+  },
+  {
+    "name": "Royal Limousine",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 12 chỗ"
+    ],
+    "min_price": 320000,
+    "max_price": 340000
+  },
+  {
+    "name": "Newstar Travel",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → SaPa",
+      "SaPa → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 11 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Sâm Hương",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng (WC)",
+      "Limousine giường nằm 32 chỗ"
+    ],
+    "min_price": 450000,
+    "max_price": 650000
+  },
+  {
+    "name": "Hà Phương Sunrise",
+    "n_trips": 18,
+    "n_routes": 1,
+    "routes": [
+      "HaiPhong → SaPa"
+    ],
+    "veh_types": [
+      "Cabin 24 phòng"
+    ],
+    "min_price": 950000,
+    "max_price": 950000
+  },
+  {
+    "name": "Phi Long",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "HCM → DaNang",
+      "HCM → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 38 chỗ (WC)"
+    ],
+    "min_price": 650000,
+    "max_price": 650000
+  },
+  {
+    "name": "Bảo Bảo Vi",
+    "n_trips": 18,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 390000,
+    "max_price": 390000
+  },
+  {
+    "name": "Lộc Thủy",
+    "n_trips": 17,
+    "n_routes": 3,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ",
+      "Limousine 22 phòng VIP"
+    ],
+    "min_price": 50000,
+    "max_price": 2200000
+  },
+  {
+    "name": "Năm Rùm",
+    "n_trips": 17,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 448000
+  },
+  {
+    "name": "Happy Travel Bus",
+    "n_trips": 16,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ"
+    ],
+    "min_price": 439000,
+    "max_price": 439000
+  },
+  {
+    "name": "Quỳnh Hằng",
+    "n_trips": 15,
+    "n_routes": 5,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "Hue → DaNang",
+      "Hue → HCM",
+      "Hue → NhaTrang"
+    ],
+    "veh_types": [
+      "Giường nằm 32 chỗ (WC)"
+    ],
+    "min_price": 350000,
+    "max_price": 750000
+  },
+  {
+    "name": "Yến Thông",
+    "n_trips": 15,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ",
+      "Giường nằm 44 chỗ",
+      "Limousine 24 phòng"
+    ],
+    "min_price": 350000,
+    "max_price": 1200000
+  },
+  {
+    "name": "Kim Chi",
+    "n_trips": 14,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng VIP",
+      "Limousine giường nằm 34 phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 700000
+  },
+  {
+    "name": "An Hoà Hiệp",
+    "n_trips": 13,
+    "n_routes": 3,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat",
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 650000
+  },
+  {
+    "name": "Phú Mỹ Hạnh",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng",
+      "Limousine 34 giường nằm"
+    ],
+    "min_price": 550000,
+    "max_price": 700000
+  },
+  {
+    "name": "Xuân Quỳnh (Hải Dương)",
+    "n_trips": 12,
+    "n_routes": 6,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang",
+      "HCM → HaiPhong",
+      "HCM → Hue",
+      "HaiPhong → HCM",
+      "Hue → HCM"
+    ],
+    "veh_types": [
+      "Cabin đôi 24 phòng"
+    ],
+    "min_price": 800000,
+    "max_price": 1500000
+  },
+  {
+    "name": "Cát Bà Easy",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 19 chỗ"
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Hải Thuỷ",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 200000
+  },
+  {
+    "name": "Ngọc Cường VIP",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 16 chỗ VIP",
+      "Limousine 19 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Toán Oanh",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 200000
+  },
+  {
+    "name": "Đức Thịnh Limousine",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Cabin 32 phòng",
+      "Limousine giường phòng 24 chỗ"
+    ],
+    "min_price": 60000,
+    "max_price": 800000
+  },
+  {
+    "name": "Tân Quang Dũng Express",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 900000
+  },
+  {
+    "name": "Trekking Travel",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine Giường Phòng 22 chỗ (WC)",
+      "Limousine giường nằm 32 phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 650000
+  },
+  {
+    "name": "Hưng Thịnh",
+    "n_trips": 12,
+    "n_routes": 1,
+    "routes": [
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng",
+      "Limousine 34 Phòng Đơn"
+    ],
+    "min_price": 550000,
+    "max_price": 650000
+  },
+  {
+    "name": "Thiện Thành Limousine",
+    "n_trips": 12,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 450000
+  },
+  {
+    "name": "Việt Nhật",
+    "n_trips": 10,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 Giường "
+    ],
+    "min_price": 100000,
+    "max_price": 770000
+  },
+  {
+    "name": "TheSinhTourist (Sinh Cafe)",
+    "n_trips": 10,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 41 chỗ"
+    ],
+    "min_price": 200000,
+    "max_price": 699000
+  },
+  {
+    "name": "Thiên Trung",
+    "n_trips": 9,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng",
+      "Limousine 34 giường"
+    ],
+    "min_price": 1000000,
+    "max_price": 1300000
+  },
+  {
+    "name": "Ngọc Ánh (Vĩnh Phúc)",
+    "n_trips": 8,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 700000,
+    "max_price": 700000
+  },
+  {
+    "name": "Bảo Long (Hương Khê)",
+    "n_trips": 8,
+    "n_routes": 4,
+    "routes": [
+      "DaNang → HCM",
+      "DaNang → NhaTrang",
+      "HCM → DaNang",
+      "NhaTrang → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ"
+    ],
+    "min_price": 300000,
+    "max_price": 450000
+  },
+  {
+    "name": "Dũng Nhật",
+    "n_trips": 8,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → Hue",
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 140000,
+    "max_price": 140000
+  },
+  {
+    "name": "Liêm Thùy",
+    "n_trips": 8,
+    "n_routes": 2,
+    "routes": [
+      "HCM → HaNoi",
+      "HaNoi → HCM"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng (WC)"
+    ],
+    "min_price": 50000,
+    "max_price": 1700000
+  },
+  {
+    "name": "Tâm Hạnh",
+    "n_trips": 8,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 340000,
+    "max_price": 360000
+  },
+  {
+    "name": "Minh Nhật",
+    "n_trips": 7,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 350000
+  },
+  {
+    "name": "Khanh Quỳnh",
+    "n_trips": 7,
+    "n_routes": 1,
+    "routes": [
+      "DaNang → Hue"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 22 chỗ (WC)",
+      "Limousine giường phòng 32 chỗ (WC)"
+    ],
+    "min_price": 300000,
+    "max_price": 450000
+  },
+  {
+    "name": "Phượng Hoàng",
+    "n_trips": 7,
+    "n_routes": 6,
+    "routes": [
+      "HCM → HaNoi",
+      "HCM → Hue",
+      "HaNoi → DaNang",
+      "HaNoi → HCM",
+      "NhaTrang → HaNoi",
+      "NhaTrang → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 550000,
+    "max_price": 1050000
+  },
+  {
+    "name": "Ngàn Hà (Bình Định)",
+    "n_trips": 7,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng đôi"
+    ],
+    "min_price": 600000,
+    "max_price": 700000
+  },
+  {
+    "name": "Kim Chi 265",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaNoi",
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine giường nằm 34 chỗ"
+    ],
+    "min_price": 550000,
+    "max_price": 550000
+  },
+  {
+    "name": "Hải Hùng (Hải Phòng)",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HaiPhong",
+      "Hue → HaiPhong"
+    ],
+    "veh_types": [
+      "Xe 22 phòng có WC"
+    ],
+    "min_price": 1200000,
+    "max_price": 1200000
+  },
+  {
+    "name": "Trung Trần Hòa",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 600000,
+    "max_price": 600000
+  },
+  {
+    "name": "Năm Ký",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 900000,
+    "max_price": 900000
+  },
+  {
+    "name": "Thanh Tỉnh",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaNang → HCM",
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 900000,
+    "max_price": 900000
+  },
+  {
+    "name": "Vip Limousine",
+    "n_trips": 6,
+    "n_routes": 1,
+    "routes": [
+      "DaNang → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine giường phòng 21 chỗ (WC)"
+    ],
+    "min_price": 490000,
+    "max_price": 490000
+  },
+  {
+    "name": "Online Travel Limousine",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 10 chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Ka Long",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → HaiPhong",
+      "HaiPhong → HaNoi"
+    ],
+    "veh_types": [
+      "Cabin 34 phòng"
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Bus Vip Limousine Ha Giang",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaGiang → HaNoi",
+      "HaNoi → HaGiang"
+    ],
+    "veh_types": [
+      "Limousine 9 chỗ"
+    ],
+    "min_price": 47970,
+    "max_price": 389000
+  },
+  {
+    "name": "Liên Khoa",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HaNoi",
+      "HaNoi → DaLat"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 850000,
+    "max_price": 850000
+  },
+  {
+    "name": "Phong Thủy",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng"
+    ],
+    "min_price": 750000,
+    "max_price": 750000
+  },
+  {
+    "name": "Phương Anh Travel",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine Giường Phòng 22 chỗ (WC)"
+    ],
+    "min_price": 650000,
+    "max_price": 650000
+  },
+  {
+    "name": "Tân Bảo Yến",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HaNoi → Hue",
+      "Hue → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 giường phòng (WC)"
+    ],
+    "min_price": 650000,
+    "max_price": 845000
+  },
+  {
+    "name": "Tân Phước Thành",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 500000
+  },
+  {
+    "name": "Thùy Trang Bình Định",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 150000,
+    "max_price": 150000
+  },
+  {
+    "name": "Nguyên Khang Limousine",
+    "n_trips": 6,
+    "n_routes": 1,
+    "routes": [
+      "HCM → NhaTrang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 600000
+  },
+  {
+    "name": "Trung Thành",
+    "n_trips": 6,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 600000,
+    "max_price": 600000
+  },
+  {
+    "name": "Kết Đoàn Travel (Hải Phòng)",
+    "n_trips": 6,
+    "n_routes": 1,
+    "routes": [
+      "SaPa → HaiPhong"
+    ],
+    "veh_types": [
+      "Xe cabin 22 phòng"
+    ],
+    "min_price": 900000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Thơm Phụng",
+    "n_trips": 6,
+    "n_routes": 1,
+    "routes": [
+      "Hue → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 24 phòng"
+    ],
+    "min_price": 500000,
+    "max_price": 500000
+  },
+  {
+    "name": "Ngọc Hùng Văn Nhân",
+    "n_trips": 5,
+    "n_routes": 5,
+    "routes": [
+      "DaNang → DaLat",
+      "HaNoi → DaLat",
+      "HaiPhong → DaLat",
+      "Hue → DaLat",
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Giường nằm 46 chỗ"
+    ],
+    "min_price": 500000,
+    "max_price": 950000
+  },
+  {
+    "name": "Hùng Đức (Quảng Ninh)",
+    "n_trips": 4,
+    "n_routes": 1,
+    "routes": [
+      "HaNoi → HaiPhong"
+    ],
+    "veh_types": [
+      "Ghế ngồi 16 chỗ"
+    ],
+    "min_price": 210000,
+    "max_price": 210000
+  },
+  {
+    "name": "Tiến Tiến",
+    "n_trips": 4,
+    "n_routes": 2,
+    "routes": [
+      "HCM → DaNang",
+      "HCM → Hue"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 650000,
+    "max_price": 650000
+  },
+  {
+    "name": "Ngọc Cường",
+    "n_trips": 4,
+    "n_routes": 3,
+    "routes": [
+      "HCM → HaGiang",
+      "HaGiang → HCM",
+      "HaGiang → HaNoi"
+    ],
+    "veh_types": [
+      "Cabin 22 VIP",
+      "Cabin 24 VIP",
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 350000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Tuấn Trinh",
+    "n_trips": 3,
+    "n_routes": 1,
+    "routes": [
+      "HaNoi → DaNang"
+    ],
+    "veh_types": [
+      "Limousine 32 giường phòng"
+    ],
+    "min_price": 450000,
+    "max_price": 450000
+  },
+  {
+    "name": "Huy Cường",
+    "n_trips": 3,
+    "n_routes": 1,
+    "routes": [
+      "HCM → HaNoi"
+    ],
+    "veh_types": [
+      "Giường nằm 40 chỗ"
+    ],
+    "min_price": 1000000,
+    "max_price": 1000000
+  },
+  {
+    "name": "Trung Hòa",
+    "n_trips": 3,
+    "n_routes": 2,
+    "routes": [
+      "HCM → NhaTrang",
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 250000,
+    "max_price": 250000
+  },
+  {
+    "name": "Mon Đà Lạt",
+    "n_trips": 3,
+    "n_routes": 2,
+    "routes": [
+      "DaLat → HCM",
+      "HCM → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng đơn"
+    ],
+    "min_price": 300000,
+    "max_price": 300000
+  },
+  {
+    "name": "Hạnh Cafe",
+    "n_trips": 3,
+    "n_routes": 1,
+    "routes": [
+      "NhaTrang → HCM"
+    ],
+    "veh_types": [
+      "Limousine 34 Giường"
+    ],
+    "min_price": 400000,
+    "max_price": 650000
+  },
+  {
+    "name": "Quang Nhựt",
+    "n_trips": 3,
+    "n_routes": 1,
+    "routes": [
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 34 phòng"
+    ],
+    "min_price": 430000,
+    "max_price": 430000
+  },
+  {
+    "name": "Hồng Sơn (Phú Yên)",
+    "n_trips": 3,
+    "n_routes": 1,
+    "routes": [
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine Giường Phòng 24 Chỗ"
+    ],
+    "min_price": 400000,
+    "max_price": 400000
+  },
+  {
+    "name": "Tân Năm A",
+    "n_trips": 2,
+    "n_routes": 1,
+    "routes": [
+      "HCM → DaNang"
+    ],
+    "veh_types": [
+      "Giường nằm 44 chỗ"
+    ],
+    "min_price": 600000,
+    "max_price": 600000
+  },
+  {
+    "name": "Đạt Thành",
+    "n_trips": 2,
+    "n_routes": 1,
+    "routes": [
+      "NhaTrang → DaLat"
+    ],
+    "veh_types": [
+      "Limousine 24 Phòng"
+    ],
+    "min_price": 750000,
+    "max_price": 750000
+  },
+  {
+    "name": "Trung Đức Phát",
+    "n_trips": 2,
+    "n_routes": 1,
+    "routes": [
+      "DaLat → HaNoi"
+    ],
+    "veh_types": [
+      "Limousine 22 phòng (WC)",
+      "Limousine 32 phòng (WC)"
+    ],
+    "min_price": 1400000,
+    "max_price": 1700000
+  }
+]
