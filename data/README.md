@@ -52,7 +52,7 @@ Update: `brand.logo_url` is now filled for 275/306 brands (the operator
 cover image VeXeRe shows on trip cards) — set by
 [`../scripts/fetch_vehicle_media.py`](../scripts/fetch_vehicle_media.py).
 
-## `vehicle-type-media/` — VeXeRe vehicle-type pictures
+## `vehicle-type-media/` — VeXeRe vehicle-type pictures (watermark removed)
 
 VeXeRe serves a captioned photo gallery per **(company, seat-template)** —
 i.e. per vehicle type of each operator — via
@@ -61,23 +61,41 @@ i.e. per vehicle type of each operator — via
         ?resource_id={seat_template_id}        (anonymous bearer token)
 
 Harvested by [`../scripts/fetch_vehicle_media.py`](../scripts/fetch_vehicle_media.py)
-across all 72 N×N pairs × 4 search dates:
+across all 72 N×N pairs × 4 search dates, then the burned-in **vexere
+watermark was removed** from every picture and the whole set **organized by
+brand → vehicle type** with human-readable folder/file names by
+[`../scripts/organize_vehicle_media.py`](../scripts/organize_vehicle_media.py)
+(detection/removal core: [`../scripts/wmremove.py`](../scripts/wmremove.py);
+manifest/gallery: [`../scripts/finalize_vehicle_media.py`](../scripts/finalize_vehicle_media.py)).
 
 | Item | Count |
 |------|-------|
 | companies (operators) | 303 (280 matched to seed brands by name) |
-| vehicle types (seat templates) | 509 — labels match `bus_layout.name`, e.g. "Limousine giường phòng 21 chỗ (WC)" |
-| unique images (all downloaded locally) | 4,074 (4,057 JPEG + 17 PNG) |
-| cover images committed here | 502 (first image of each vehicle type, ~42 MB) |
+| vehicle types (seat templates) | 502 folders — labels match `bus_layout.name`, e.g. "Limousine giường phòng 21 chỗ (WC)" |
+| unique images — **all committed, watermark removed** | 4,074 (4,057 JPEG + 17 PNG) |
+| brand covers (`covers/`) | 296 (watermark-removed too) |
 
-| File | Description |
-|------|-------------|
-| `vehicle_type_media.json` | Full manifest: per company → vehicle types → images (image_id, original URL, caption vi/en, local file when downloaded). `brand_slug` joins to `booking_seed.sqlite.brand`; `label` joins to `bus_layout.name`. |
-| `vehicle_images.html` | Review gallery — every vehicle type with its photos (missing local files fall back to the VeXeRe CDN URL). |
-| `vehicle_images/` | The committed cover image per vehicle type (1 per type). The complete 4,074-image set (~350 MB) is produced by re-running the script — every URL is in the manifest. |
+| Path | Description |
+|------|------|
+| `vehicles/<brand-slug>/<vehicle-type-slug>/` | One folder per vehicle type; pictures named `NN-<tags>.jpeg` where `NN` is the index and tags derive from the caption: `mat-truoc` front, `mat-sau` rear, `ben-hong` side, `noi-that` interior, `tien-ich` amenities, `giuong-nam` sleeper, `limousine` … (`photo` when the caption has no known tag). Vehicle-type slugs are ASCII-folded labels (e.g. `giuong-nam-40-cho`, `limousine-24-phong`), suffixed `-t<seat_template_id>` only when a company has two templates with the same label. |
+| `covers/<brand-slug>.<ext>` | The operator's cover image (the same one VeXeRe shows on trip cards), watermark-removed. |
+| `vehicle_type_media.json` | Manifest: company → vehicle types → images with `image_id`, original CDN `url`, caption vi/en, new `file` path, `cover_file` per company and `is_cover` on gallery images that double as covers. `brand_slug` joins to `booking_seed.sqlite.brand`; `label` joins to `bus_layout.name`. |
+| `gallery.html` | Offline review gallery, grouped by brand → vehicle type (missing local files fall back to the VeXeRe CDN URL). |
+| `README.md` | In-folder documentation (layout, naming, watermark-removal method). |
+
+Watermark removal method: the mark (yellow rounded-square logo with bus icon +
+white "vexere" text + orange smile, bottom-left, sometimes semi-transparent)
+is detected per image with multi-scale template matching on both the raw BGR
+image and an R−B yellow-hue channel — the latter catches faint instances over
+dark or yellow bus bodies — validated by structure checks (solid yellow
+square + text band), then removed by masked OpenCV TELEA inpainting blended
+with local-texture-matched noise so the fill matches the surrounding grain.
+~90% of the pictures carried the mark; the remaining ~10% are original,
+untouched (verified watermark-free).
 
 Captions describe vehicle parts (mặt trước / bên hông / nội thất / tiện
-ích — front, side, interior, amenities) and are in the manifest per image.
+ích — front, side, interior, amenities) and are kept in the manifest per
+image.
 
 ## `trips-sample/` — single-route sample dataset
 
