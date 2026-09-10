@@ -4,7 +4,7 @@
   "source": "vexere.com",
   "media_api": "GET https://api.vexere.com/v3/company/{company_id}/media?resource_id={seat_template_id}",
   "organization": "vehicles/<brand-slug>/<vehicle-type-slug>/<seq>-<tags>.<ext>; covers/<brand-slug>.<ext>",
-  "watermark_removal": "vexere logo/text/smile detected via multi-scale template matching (raw-BGR + R-B hue channel) and removed via masked TELEA inpainting + local-texture-matched noise blending",
+  "watermark_removal": "vexere logo/text/smile detected via multi-scale template matching (raw-BGR + R-B hue channel) and removed with LaMa (big-lama) generative inpainting: solid-rectangle mask over the full watermark bbox, crop-based inference with 2.5x logo-height context, feathered paste-back — pixels outside the watermark stay bit-identical. Regenerate with scripts/watermark-removal (see its README).",
   "n_companies": 303,
   "n_vehicle_types": 502,
   "n_images": 4074,
