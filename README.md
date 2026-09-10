@@ -369,6 +369,7 @@ Python scripts orchestrate **N×N crawl across all major Vietnamese
 cities** and build ready-to-use Excel workbooks.
 
 - **[`scripts/`](scripts/)** — `nxn_crawl.py` (N×N orchestrator), `build_excel.py` (flat fares workbook), `build_excel_enriched.py` (enriched workbook with full pickup/dropoff point detail). See [`scripts/README.md`](scripts/README.md) for full instructions.
+- **[`scripts/watermark-removal/`](scripts/watermark-removal/)** — standalone CPU-only tool that removes the vexere watermark from the vehicle photos with LaMa AI inpainting (fetch originals → process → sync into `data/vehicle-type-media/`). See its [`README.md`](scripts/watermark-removal/README.md).
 - **[`data/`](data/)** — published crawl outputs: the N×N manifest, the flat fares workbook (`vexere_nxn_trips.xlsx`, 62 sheets, 102,715 fares), the enriched workbook (`vexere_nxn_trips_enriched.xlsx`, 63 sheets, 49,648 enriched fares + 10,742 distinct pickup/dropoff points), and a single-route sample dataset for quick inspection. See [`data/README.md`](data/README.md) for coverage details.
 
 To reproduce the published datasets end-to-end (~25 min crawl + ~2 min Excel build):

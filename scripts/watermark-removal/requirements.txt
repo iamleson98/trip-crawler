@@ -1,0 +1,9 @@
+# CPU-only install — PyTorch CPU wheel is much smaller than the default:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# (see README.md for the full install guide)
+torch>=2.2
+simple-lama-inpainting>=0.1.0
+opencv-python-headless>=4.8
+numpy>=1.26
+scipy>=1.11
+Pillow>=10.0

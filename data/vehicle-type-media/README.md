@@ -38,15 +38,34 @@ Stats: **303** companies · **502** vehicle types ·
 
 ## Watermark removal
 
-The vexere watermark (yellow rounded-square logo with bus icon + white
-"vexere" text + orange smile, bottom-left) was detected per image with
-multi-scale template matching on both the raw BGR image and an R−B
-(yellow-hue) channel — the latter catches semi-transparent instances over dark
-or yellow backgrounds — then removed by masked inpainting (OpenCV TELEA) with
-local-texture-matched noise blending so the filled area matches surrounding
-grain. Images without a watermark (~10%) were left untouched.
+Two generations of removal tooling live in the history of this dataset:
 
-Source scripts: `scripts/fetch_vehicle_media.py` (collection),
-`scripts/wmremove.py` (watermark detection/removal),
+1. **TELEA + noise blending (superseded)** — the first pass removed the
+   watermark with OpenCV TELEA inpainting plus local-texture-matched noise.
+   The fills looked smudged and slightly unclear where the watermark sat.
+2. **LaMa AI inpainting (current)** —
+   [`scripts/watermark-removal/`](../../scripts/watermark-removal/) detects
+   the watermark (multi-scale template matching on raw BGR and an R−B
+   yellow-hue channel — the latter catches semi-transparent instances over
+   dark or yellow backgrounds), masks the **full watermark bounding box as a
+   solid rectangle** (critical: faint semi-transparent remnants left outside
+   a pixel-precise mask make LaMa "complete" the watermark back), and fills
+   it with [big-lama](https://github.com/advimman/lama) — a generative
+   inpainting model — on a padded crop, pasting back only the masked pixels
+   with a 1 px feather. Everything outside the watermark stays bit-identical.
+
+Re-generate this whole tree from the source URLs with:
+
+```bash
+python scripts/watermark-removal/cli.py fetch   --manifest data/vehicle-type-media/vehicle_type_media.json --output originals
+python scripts/watermark-removal/cli.py process --input originals --output cleaned --workers $(nproc)
+python scripts/watermark-removal/cli.py sync    --processed cleaned --manifest data/vehicle-type-media/vehicle_type_media.json --target data/vehicle-type-media
+```
+
+See [`scripts/watermark-removal/README.md`](../../scripts/watermark-removal/)
+for the full CPU-only guide (install, quality notes, troubleshooting).
+
+Historical scripts: `scripts/fetch_vehicle_media.py` (collection),
+`scripts/wmremove.py` (TELEA-based removal, superseded),
 `scripts/organize_vehicle_media.py` + `scripts/finalize_vehicle_media.py`
 (organization/manifest/gallery).
