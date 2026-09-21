@@ -39,14 +39,20 @@ def uuid_blob(u) -> str:
 
 
 def ssh_json(query: str):
+    """Read-only probe against a SNAPSHOT copy of the live DB.
+
+    Never point the CLI at the live files while the app runs: a root-run
+    open creates a root-owned -wal sidecar that crashes the container,
+    and uid 1000 cannot traverse /var/lib/docker/volumes to open it
+    directly. Copying db (+ wal) to /tmp and probing the copy is safe —
+    the engine replays the copied WAL exactly as it would on recovery.
+    """
     q = query.replace("'", "'\"'\"'")
-    # Run the CLI as the app user (uid 1000): a root-run open creates a
-    # root-owned -wal sidecar that crashes the container (uid-1000 app
-    # cannot write it). setpriv drops privileges for the whole command.
     cmd = [__import__("sys").executable, str(HERE / "ssh_run.py"),
+           f"cp {DB} /tmp/probe.db; cp {DB}-wal /tmp/probe.db-wal 2>/dev/null; "
            f"printf '.mode json\\n{q}\\n.quit\\n' | "
-           f"setpriv --reuid 1000 --regid 999 --clear-groups "
-           f"/opt/migration/rustqlite-cli {DB}"]
+           f"/opt/migration/rustqlite-cli /tmp/probe.db; "
+           f"rm -f /tmp/probe.db /tmp/probe.db-wal"]
     try:
         out = subprocess.run(cmd, capture_output=True, text=True, timeout=280)
     except subprocess.TimeoutExpired as e:
