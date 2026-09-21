@@ -54,7 +54,7 @@ python3 run_migration.py --phase db-layouts   # → layouts_seats.sql
 # 2. stop the backend, backup, import, fix ownership, restart:
 python3 ssh_run.py "docker service scale datxevui_backend=0 --detach"
 python3 ssh_run.py --put layouts_seats.sql /opt/migration/layouts_seats.sql
-python3 ssh_run.py "/opt/migration/rustqlite-cli --import /opt/migration/layouts_seats.sql /var/lib/docker/volumes/datxevui_vexevn-data/_data/app.db"
+python3 ssh_run.py "setpriv --reuid 1000 --regid 999 --clear-groups /opt/migration/rustqlite-cli --import /opt/migration/layouts_seats.sql /var/lib/docker/volumes/datxevui_vexevn-data/_data/app.db"
 python3 ssh_run.py "chown 1000:999 /var/lib/docker/volumes/datxevui_vexevn-data/_data/app.db* && docker service scale datxevui_backend=1 --detach"
 
 python3 run_migration.py --phase data --workers 6 --rps 40   # addresses → routes → schedules → pickup points
@@ -96,8 +96,11 @@ python3 warm_trips.py --days 7            # → warm_trips.sql, apply like layou
   `migration_state.json` and skips completed work; re-running any phase
   is safe. Brands are matched by slug against the server state.
 * **Ownership trap**: files created in the data volume by root (the CLI)
-  crash-loop the container (uid 1000 `app` cannot write) — always
-  `chown 1000:999 app.db*` after any direct-DB step.
+  crash-loop the container (uid 1000 `app` cannot write). ALWAYS run the CLI
+  as the app user — `setpriv --reuid 1000 --regid 999 --clear-groups
+  /opt/migration/rustqlite-cli …` — and `chown 1000:999 app.db*` afterwards
+  if anything root-owned slipped through. A root-owned 0-byte `-wal` after
+  even a read-only root-run CLI access is enough to take the site down.
 
 ## Bugs found in rust-be-template while migrating
 

@@ -40,8 +40,12 @@ def uuid_blob(u) -> str:
 
 def ssh_json(query: str):
     q = query.replace("'", "'\"'\"'")
+    # Run the CLI as the app user (uid 1000): a root-run open creates a
+    # root-owned -wal sidecar that crashes the container (uid-1000 app
+    # cannot write it). setpriv drops privileges for the whole command.
     cmd = [__import__("sys").executable, str(HERE / "ssh_run.py"),
            f"printf '.mode json\\n{q}\\n.quit\\n' | "
+           f"setpriv --reuid 1000 --regid 999 --clear-groups "
            f"/opt/migration/rustqlite-cli {DB}"]
     try:
         out = subprocess.run(cmd, capture_output=True, text=True, timeout=280)
