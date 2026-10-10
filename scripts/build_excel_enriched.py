@@ -356,7 +356,11 @@ def build_enriched_fares(trips_jsonl_path: Path, from_id: int, to_id: int,
                 fare = s.get("fare") or {}
                 orig = int(fare.get("original", 0) or 0)
                 disc = int(fare.get("discount", 0) or 0)
-                final = orig - max(0, disc)
+                # Vexere fare semantics (proven in the 2026-10-10 full-data
+                # audit): `discount` is the PROMO SELLING PRICE, not the
+                # amount off; -1 (or <= 0) means "no promo published" and
+                # the payable price is the list price.
+                final = disc if disc > 0 else orig
                 max_p = int(fare.get("max", 0) or 0)
 
                 # Determine the date for this row: use schedule's pickup_date
