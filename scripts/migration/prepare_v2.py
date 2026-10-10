@@ -618,6 +618,16 @@ def main() -> None:
     for rid, plist in per_route.items():
         for i, p in enumerate(plist, start=1):
             p["stop_order"] = i
+    # A route with exactly ONE pickup point cannot serve the booking flow
+    # (boarding + a later drop-off): drop it so the route falls back to its
+    # schedules' timetables, which list boarding + drop stops.
+    lone = [rid for rid, plist in per_route.items() if len(plist) == 1]
+    if lone:
+        lone_set = set(lone)
+        pickups = [p for p in pickups if p["route_seed_id"] not in lone_set]
+        stats["routes_lone_pickup_dropped"] = len(lone)
+        print(f"[pickups] dropped the single pickup point of {len(lone)} "
+              f"routes (booking needs boarding + drop-off)")
 
     # ── Route pictures ─────────────────────────────────────────────
     media_by_slug = {}
