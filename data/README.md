@@ -17,9 +17,9 @@ produced by the Python scripts in `../scripts/`.
 
 | File | Size | Description |
 |------|------|-------------|
-| `vexere_nxn_manifest.json` | ~16 KB | Inventory of all 72 (from, to) pairs attempted: from/to city IDs, names, trip count, fare count, output paths. |
-| `vexere_nxn_trips.xlsx` | ~5.4 MB | **Flat fares workbook** — 62 sheets: 1 summary + 60 per-pair (skips the 12 pairs that had zero direct service). 84,034 fare rows, 13 columns each. |
-| `vexere_nxn_trips_enriched.xlsx` | ~10.7 MB | **Enriched workbook** — 62 sheets: 1 summary + 60 per-pair + 1 master "Pickup & Dropoff Points" sheet. 42,017 enriched fares with 25 columns each, plus 6,873 distinct pickup/dropoff points (website-visible only). |
+| `vexere_nxn_manifest.json` | ~16 KB | Inventory of all 72 (from, to) pairs attempted: from/to city IDs, names, trip count, fare count, output paths, crawl dates. |
+| `vexere_nxn_trips.xlsx` | ~5.4 MB | **Flat fares workbook** — 62 sheets: 1 summary + 60 per-pair (skips the 12 pairs that had zero direct service). 84,034 fare rows, 13 columns each. *Still reflects the 2026-09-09 → 2026-09-11 crawl — not yet rebuilt for the 2026-10 refresh.* |
+| `vexere_nxn_trips_enriched.xlsx` | ~10.4 MB | **Enriched workbook** — 62 sheets: 1 summary + 60 per-pair + 1 master "Pickup & Dropoff Points" sheet. 38,830 enriched fares with 25 columns each, plus 6,970 distinct pickup/dropoff points (website-visible only). Refreshed 2026-10-10 (crawl window 2026-10-10 → 2026-10-12). |
 | `booking_seed.sqlite` | ~21 MB | **Booking-app seed database** — the enriched workbook loaded into the full booking-app schema (all 38 tables, SeaORM-compatible). Deduplicated, see below. |
 | `booking_seed_reverse_geocode_cache.json` | ~550 KB | Reverse-geocode cache (2,469 unique coordinates → province/ward) from `datxevui.com`, used to fill `address.province/district/ward`. Keep next to the script to re-seed without API calls. |
 
@@ -114,20 +114,22 @@ for testing downstream scripts without downloading the full N×N set.
 ## Coverage of the N×N dataset
 
 - **9 cities, 72 ordered pairs** (each city paired with every other city).
-- **3-day window**: 2026-09-09 → 2026-09-11.
-- **60 pairs** have direct service (41,993 trips total).
+- **3-day window**: 2026-10-10 → 2026-10-12 (latest refresh of the enriched
+  workbook + manifest; the flat workbook still reflects the 2026-09-09 →
+  2026-09-11 window).
+- **60 pairs** have direct service (38,818 trips total).
 - **12 pairs** have no direct service — mostly cross-region pairs that
   are geographically far (e.g. Hà Giang → Nha Trang, Đà Lạt → Hà Giang).
 
-Top 5 routes by trip count:
+Top 5 routes by trip count (2026-10-10 → 2026-10-12):
 
 | Route | Trips |
 |-------|------|
-| Hà Nội → Hải Phòng | 8,067 |
-| Hải Phòng → Hà Nội | 5,575 |
-| Đà Lạt → Hồ Chí Minh | 3,310 |
-| Huế → Đà Nẵng | 3,022 |
-| Đà Nẵng → Huế | 2,970 |
+| Hải Phòng → Hà Nội | 5,471 |
+| Hà Nội → Hải Phòng | 4,785 |
+| Đà Lạt → Hồ Chí Minh | 3,930 |
+| Hồ Chí Minh → Đà Lạt | 2,960 |
+| Đà Nẵng → Huế | 2,947 |
 
 ## Field schemas
 

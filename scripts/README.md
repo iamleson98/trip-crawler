@@ -211,9 +211,10 @@ Tested end-to-end on `data/trips-sample/trips.jsonl` (Hà Nội → Sa Pa,
 
 ## Reproducibility
 
-The two `.xlsx` files in `data/` were produced by running these
-scripts against the 72-pair, 3-day crawl from 2026-09-09 to
-2026-09-11. To reproduce end-to-end:
+The enriched `.xlsx` and the manifest in `data/` reflect the 72-pair, 3-day
+crawl from 2026-10-10 to 2026-10-12 (latest refresh). The flat
+`vexere_nxn_trips.xlsx` still reflects the earlier 2026-09-09 → 2026-09-11
+crawl. To reproduce the enriched workbook end-to-end:
 
 ```bash
 # 1. Build the binary

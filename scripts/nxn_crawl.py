@@ -44,7 +44,7 @@ AREAS = [
     (278, "Hà Giang"),
 ]
 
-DATES = ["2026-09-09", "2026-09-10", "2026-09-11"]
+DATES = ["2026-10-10", "2026-10-11", "2026-10-12"]
 VEXERE_BIN = "/home/z/my-project/trip-crawler-clone/target/release/vexere"
 OUT_ROOT = Path("/tmp/nxn_out")
 OUT_ROOT.mkdir(parents=True, exist_ok=True)
