@@ -231,10 +231,45 @@ def phase_layouts(c: Client, plan, st: State, dry: bool, workers: int = 1):
 # ── Phase: data ──────────────────────────────────────────────────────
 def phase_data(c: Client, plan, st: State, dry: bool, workers: int = 1):
     brand_by_seed = {b["seed_id"]: b for b in plan["brands"]}
+    layout_seed_by_new_id = {l["id"]: l["seed_id"] for l in plan["layouts"]}
 
     vt_ids = {v["code"]: v["id"] for v in
               c.get_json("/api/admin/vehicle-types").get("items", [])}
     print(f"[data] vehicle types: {list(vt_ids)}")
+
+    # 0. geocode addresses without coordinates (district-wide zones) ────
+    import urllib.parse
+    todo_geo = [a for a in plan["addresses"] if a["lat"] == 0 and a["lon"] == 0]
+    if todo_geo and not dry:
+        cache = load_json(HERE / "geocode_cache_v2.json", {})
+        print(f"[geocode] {len(todo_geo)} addresses without coordinates")
+        for i, a in enumerate(todo_geo, 1):
+            key = a["name"]
+            if key in cache:
+                hit = cache[key]
+                if hit:
+                    a["lat"], a["lon"] = hit
+                continue
+            q = urllib.parse.quote(a["name"])
+            try:
+                r = c.get_json(f"/api/places/search?q={q}&limit=1")
+                items = r.get("items") or []
+            except Exception as e:
+                items = []
+                print(f"  [geocode] search failed for {a['name']}: {e}")
+            hit = None
+            if items:
+                it = items[0]
+                hit = [it.get("lat", 0.0), it.get("lon", 0.0)]
+            cache[key] = hit
+            if hit:
+                a["lat"], a["lon"] = hit
+            if i % 20 == 0:
+                print(f"  [geocode] {i}/{len(todo_geo)}")
+        (HERE / "geocode_cache_v2.json").write_text(
+            json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+        ok = sum(1 for a in todo_geo if a["lat"] or a["lon"])
+        print(f"[geocode] resolved {ok}/{len(todo_geo)}")
 
     # 1. addresses ---------------------------------------------------------
     def addr_worker(a):
@@ -298,9 +333,8 @@ def phase_data(c: Client, plan, st: State, dry: bool, workers: int = 1):
         if s.get("base_price_child") is not None:
             body["basePriceChild"] = s["base_price_child"]
         if s["layout_id"]:
-            lid = st.map_get("layouts",
-                             next(l["seed_id"] for l in plan["layouts"]
-                                  if l["id"] == s["layout_id"]))
+            seed_lid = layout_seed_by_new_id.get(s["layout_id"])
+            lid = st.map_get("layouts", seed_lid) if seed_lid else None
             if lid:
                 body["busLayoutId"] = lid
         vt = vt_ids.get(s["vehicle_code"]) if s["vehicle_code"] else None
