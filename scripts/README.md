@@ -94,6 +94,39 @@ distinct point across all 72 pairs (~6,870 rows), deduplicated by
 website-visible points are included (hidden-flagged points are dropped,
 see `_visible_points`).
 
+### `build_excel_schedules.py` — schedules & seat-pricing workbook
+
+Reads each pair's raw `trips.jsonl`, **deduplicates the dated trip
+instances into unique recurring schedules** (route + departure time +
+seat class), and writes a 6-sheet schedule/pricing catalog to
+`data/vexere_nxn_trips_enriched.xlsx`. No per-date trip instances are
+listed — the crawl dates are used only as frequency evidence
+(`3/3 days` = daily service) and to capture the observed selling-price
+range per seat class.
+
+```bash
+python scripts/build_excel_schedules.py   # input/output paths at top
+```
+
+Sheets:
+- **Summary** — KPIs, top routes by daily departures, seat-class overview, notes
+- **Schedules** — master catalog: 16,028 rows, one per unique schedule ×
+  seat class (from/to city, operator, route, points, departure/arrival,
+  duration, distance, seat class + family, seats, list price, min/max
+  observed selling price, discount %, frequency)
+- **Routes** — per city pair: operators, schedules, daily count, first/last
+  departure, duration range, price range, seat families
+- **Seat Class Pricing** — per (city pair × seat family): schedules,
+  operators, min/median/max price
+- **Operators** — per operator: coverage, price range, rating, top route
+- **Review** — live cross-check formulas (row counts / schedule totals)
+
+This is the current format of the enriched workbook (since the 2026-10-10
+refresh; the requirement became "schedule information and pricing for
+seats, no next-day trip instances"). `build_excel_enriched.py` above still
+reproduces the previous 62-sheet per-date fare layout if you need it —
+the booking seed DB was generated from that earlier export.
+
 ### `import_to_sqlite.py` — load trips.jsonl into the booking-app SQLite DB
 
 Reads one or more `trips.jsonl` files (one Trip object per line, as
@@ -229,11 +262,9 @@ python scripts/build_excel.py \
     --manifest /tmp/nxn_out/manifest.json \
     --out      data/vexere_nxn_trips.xlsx
 
-# 4. Build the enriched workbook
-python scripts/build_excel_enriched.py \
-    --in-dir   /tmp/nxn_out \
-    --manifest /tmp/nxn_out/manifest.json \
-    --out      data/vexere_nxn_trips_enriched.xlsx
+# 4. Build the schedules & seat-pricing workbook (the enriched file)
+python scripts/build_excel_schedules.py
+#    (legacy per-date fare layout: scripts/build_excel_enriched.py)
 
 # 5. (Optional) Populate a booking-app SQLite DB with the crawled catalog
 python scripts/import_to_sqlite.py \
