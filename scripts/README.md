@@ -101,8 +101,23 @@ instances into unique recurring schedules** (route + departure time +
 seat class), and writes a 6-sheet schedule/pricing catalog to
 `data/vexere_nxn_trips_enriched.xlsx`. No per-date trip instances are
 listed — the crawl dates are used only as frequency evidence
-(`3/3 days` = daily service) and to capture the observed selling-price
+(`3/3 days` = daily service) and to capture the observed payable-price
 range per seat class.
+
+> **Fare semantics** (verified against the raw API and the published
+> `trips-sample/fares.csv`): Vexere's `fare.discount` is the promo
+> **selling price** — the amount you pay — not the amount off the list
+> price. `fare.discount = -1` means "no promo published", in which case
+> the payable price equals `fare.original` (the list price). Evidence:
+> `discount / original` is always within [0.5, 1.0] (a real promo, never
+> ~100% off) and `discount == original` never occurs. The builder
+> therefore fills Min/Max Price with the promo price when one is
+> published and otherwise falls back to the list price; Discount shows
+> the best observed reduction off list (0% = no promo observed).
+> Note: the Rust extractor's `final_price_vnd = original − max(0,
+> discount)` interprets `discount` as the amount off, which produces
+> implausible fares (e.g. 450,000đ list → 10,000đ "final") — treat that
+> column of the flat fares tables with caution.
 
 ```bash
 python scripts/build_excel_schedules.py   # input/output paths at top
@@ -113,7 +128,7 @@ Sheets:
 - **Schedules** — master catalog: 16,028 rows, one per unique schedule ×
   seat class (from/to city, operator, route, points, departure/arrival,
   duration, distance, seat class + family, seats, list price, min/max
-  observed selling price, discount %, frequency)
+  observed payable price, discount %, frequency)
 - **Routes** — per city pair: operators, schedules, daily count, first/last
   departure, duration range, price range, seat families
 - **Seat Class Pricing** — per (city pair × seat family): schedules,

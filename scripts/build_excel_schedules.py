@@ -8,7 +8,14 @@ This workbook is therefore a SCHEDULE-LEVEL catalog — no per-date trip
 instances. The 38,818 dated trips crawled for 2026-10-10 → 2026-10-12 are
 collapsed (deduplicated) into 15.7k unique recurring schedules; the 3-day
 window is used ONLY as evidence of how often a schedule runs ("3/3 days =
-daily") and to capture the observed selling-price range per seat class.
+daily") and to capture the observed payable-price range per seat class.
+
+VeXeRe fare semantics (verified against raw API + the published fares.csv):
+`fare.discount` is the promo SELLING price (the amount you pay), NOT the
+amount off; `fare.original` is the list price; `discount = -1` means "no
+promo published" → the payable price equals the list price. Evidence:
+discount/original is always in [0.5, 1.0] (a promo, never ~100% off), and
+discount == original never occurs.
 
 Reads  /home/z/my-project/nxn_out/manifest.json + each pair's trips.jsonl
 Writes /home/z/my-project/download/vexere_nxn_trips_enriched.xlsx
@@ -203,10 +210,15 @@ def load_catalog():
                     catalog[key] = v
                 v["dates"].add(date)
                 fare = s.get("fare") or {}
-                if fare.get("original"):
-                    v["orig"].append(fare["original"])
-                if fare.get("discount"):
-                    v["sell"].append(fare["discount"])
+                orig_f = fare.get("original") or None
+                disc_f = fare.get("discount")
+                if orig_f:
+                    v["orig"].append(orig_f)
+                # payable price: the promo price when one is published,
+                # otherwise the list price (discount == -1 sentinel)
+                pay = disc_f if (disc_f is not None and disc_f > 0) else orig_f
+                if pay:
+                    v["sell"].append(pay)
                 if s.get("total_seats"):
                     v["seats"] = max(v["seats"] or 0, s["total_seats"])
 
@@ -216,8 +228,11 @@ def load_catalog():
         orig = max(v["orig"]) if v["orig"] else None
         sell_min = min(v["sell"]) if v["sell"] else None
         sell_max = max(v["sell"]) if v["sell"] else None
-        disc = (round((1 - sell_min / orig) * 100, 1)
-                if orig and sell_min and orig >= sell_min else None)
+        if orig and sell_min:
+            disc = (round((1 - sell_min / orig) * 100, 1)
+                    if orig >= sell_min else 0.0)
+        else:
+            disc = None
         freq = f"{n_days}/3 {'(daily)' if n_days == 3 else 'days'}"
         rows.append({
             **{k: v[k] for k in
@@ -583,8 +598,10 @@ def main():
         "(daily service). '2/3 days' and '1/3 days' = observed on fewer days "
         "(may be non-daily, seasonal, or sold out on the missing days).",
         "Prices are per seat in VND as listed on vexere.com at crawl time. "
-        "List Price = operator list price; Min/Max Price = observed selling "
-        "price range after discounts across the verified days.",
+        "List Price = operator list price; Min/Max Price = observed payable "
+        "price range across the verified days — the promo price when one is "
+        "published, otherwise the list price. Discount = best observed "
+        "reduction off the list price (0% = no promotion observed).",
         "Arrival times show the day offset (+1d / +2d) computed from the "
         "scheduled duration. Durations and distances come from the operator's "
         "route data.",
@@ -636,7 +653,7 @@ def main():
         total=total,
         caption=("Per city pair × seat class family: unique schedules, daily "
                  "(3/3) schedules, operators and the per-seat price range in "
-                 "VND (median of observed selling prices)."),
+                 "VND (median of observed payable prices)."),
         freeze="E5")
     assert sum(x[3] for x in data) == n_rows, "pricing sheet schedule sum"
 
