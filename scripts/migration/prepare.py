@@ -144,15 +144,33 @@ def hhmm_valid(t: str) -> bool:
 
 # ── Phone extraction ────────────────────────────────────────────────
 def extract_phone(*cands) -> str | None:
-    """First valid VN number (0xxxxxxxxx, 9-20 digits) from research strings."""
+    """First valid VN number from research strings, in a format the
+    backend's validate_phone accepts (0-prefix or +84…).
+
+    Handles every format the research files use: single numbers, several
+    numbers in one space/;-separated string, spaced hotlines
+    ("1900 636 632"), and label annotations after the number.
+    0-prefix (9-11 digits) is returned as-is; 1900-style hotlines are
+    normalized to "+841900xxxx" (validator-compatible, dialable).
+    A 1900 hotline is preferred — it is the operator's canonical contact.
+    """
+    pat_1900 = re.compile(r"\b1900[\s.\-]?\d{3,4}(?:[\s.\-]?\d{3})?\b")
+    pat_0 = re.compile(r"\b0\d{2,3}[\s.\-]?\d{3}[\s.\-]?\d{3,4}\b|\b0\d{8,9}\b")
+    # 1900 hotlines are the canonical operator contact — prefer them…
     for cand in cands:
         if not cand:
             continue
-        for raw in re.split(r"[;,/]| và | hoac ", str(cand)):
-            digits = re.sub(r"[^\d+]", "", raw)
-            digits = digits.lstrip("+")
-            if digits.startswith("0") and 9 <= len(digits) <= 11 \
-                    and digits.isdigit():
+        for m in pat_1900.finditer(str(cand)):
+            digits = re.sub(r"\D", "", m.group(0))
+            if digits.startswith("1900") and 7 <= len(digits) <= 10:
+                return f"+84{digits}"
+    # …fall back to a 0-prefix number
+    for cand in cands:
+        if not cand:
+            continue
+        for m in pat_0.finditer(str(cand)):
+            digits = re.sub(r"\D", "", m.group(0))
+            if digits.startswith("0") and 9 <= len(digits) <= 11:
                 return digits
     return None
 

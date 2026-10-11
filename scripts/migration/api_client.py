@@ -90,9 +90,13 @@ class Client:
                 retries: int = 5) -> bytes:
         """Authenticated JSON (or raw) request with retry + re-login."""
         url = path if path.startswith("http") else f"{self.base}{path}"
+        # Auth endpoints must run without a token — on a fresh DB there is
+        # no user to log in as yet (bootstrap registers the first admin).
+        skip_auth = path.startswith(("/api/auth/login", "/api/auth/register"))
         last_err = None
         for attempt in range(retries + 1):
-            self._ensure_token()
+            if not skip_auth:
+                self._ensure_token()
             self._pace()
             headers = self._base_headers()
             if self.token:

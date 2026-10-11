@@ -116,3 +116,30 @@ python3 warm_trips.py --days 7            # → warm_trips.sql, apply like layou
 * `/opt/migration/rustqlite-cli` — engine CLI used for the direct-DB steps
 * `/opt/migration/layouts_seats.sql`, `warm_trips.sql` — applied imports
 * `/opt/migration/app.db.bak-*` — DB backups taken before each direct step
+
+## 2026-10-11 production import — engine lessons & repair tooling
+
+The v2 import ran twice against the live site (fresh DB each time, via the
+rust-be-template db-reset workflow). Findings that future imports should
+know:
+
+* **rust-sql write-path corruption under concurrent API writes** (v0.6.1
+  pin 8d16785, and residual cases on e0dc839): a small fraction of
+  committed rows become unreachable from scans/lookups while their
+  PK/unique index entries persist ("partial-index strays"). Symptoms:
+  `stats` counts > list results, INSERT failing with 2067 UNIQUE for rows
+  that do not exist, dependent creates 404-ing ("brand not found").
+* **The repair**: stop the backend, `VACUUM;` via `rustqlite-cli` built
+  from the pinned engine (the version-matched binary matters), chown
+  `1000:999 app.db*`, restart. REINDEX is a no-op stub in the engine —
+  use VACUUM. VACUUM makes unreachable rows visible again AND drops
+  stale index entries; afterwards re-run the phases (idempotent) and
+  de-duplicate the reappeared rows.
+* **Run the data phases gently** (`--workers 2 --rps 12`) and verify with
+  a server-vs-plan reconciliation afterwards; the picture phase dedups
+  identical content per route (8,986 plan keys → 8,037 distinct rows).
+* **`extract_phone` now understands 1900-style hotlines** (stored
+  `+841900xxxx` to satisfy the backend's `validate_phone`), and
+  26 additional operator hotlines were web-researched into
+  `data/brand-research/final_brands.json` (contact phone coverage:
+  57 → 110 of 312 brands).
