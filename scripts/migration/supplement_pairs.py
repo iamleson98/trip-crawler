@@ -527,10 +527,12 @@ def phase_verify(c: Client):
 
     import random
     random.seed(3)
-    for key in random.sample(sorted(services), 5):
+    name_by_id = {b["id"]: nfc(b["name"]) for b in brands}
+    for key in random.sample(sorted(services), 8):
         frm, to, op = key
         route = next((r for r in routes if r["startLocationId"] == frm
-                      and r["endLocationId"] == to), None)
+                      and r["endLocationId"] == to
+                      and name_by_id.get(r["brandId"]) == op), None)
         if not route:
             print(f"[verify] {frm}->{to} ({op[:24]!r}): NO ROUTE")
             continue
