@@ -35,3 +35,9 @@ Thumbs.db
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Migration runtime state (idempotency maps, geocode caches, fetched presets)
+scripts/migration/supplement_state.json
+scripts/migration/migration_plan_v2.json
+scripts/migration/preset_cache.json
+scripts/migration/geocode_cache_v2.json
